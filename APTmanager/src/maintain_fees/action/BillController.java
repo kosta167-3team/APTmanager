@@ -12,8 +12,11 @@ import AptManagerController.Action;
 import AptManagerController.ActionForward;
 import AptManagerController.ControllerExcuteClass;
 
+
+
 public class BillController implements ControllerExcuteClass
 {	
+	/* 각 컨트롤러는 ControllerExcuteClass를 implements한다.*/
 	private static BillController billController = new BillController();
 	
     public BillController() {
@@ -34,28 +37,29 @@ public class BillController implements ControllerExcuteClass
 		ActionForward forward = null;
 		Action action = null;
 		
-		if (command.equals("haha32123.bill")) {
-			action = new getMonthBill();
+		if (command.equals("month.bill")) {
+			/* 각 actionClass 들은 Action 클래스를 implements 한다.*/
+			action = new getMonthBillAction();
 			try {
 				forward = action.excute(httpServletRequest, httpServletResponse);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} /*else if ( command.equals("insertAction.do") ) {
-			action = new InsertAction();
+		} else if ( command.equals("yearMonth.bill") ) {
+			action = new getYearMonthBillAction();
 			try {
-				forward = action.excute(request, response);
+				forward = action.excute(httpServletRequest, httpServletResponse);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if(command.equals("listAction.do")) {
-			action = new ListAction();
+		} else if(command.equals("width.bill")) {
+			action = new CompareWidthAction();
 			try {
-				forward = action.excute(request, response);
+				forward = action.excute(httpServletRequest, httpServletResponse);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if(command.equals("detail.do")) {
+		} /*else if(command.equals("detail.do")) {
 			action = new DetailAction();
 			try {
 				forward = action.excute(request, response);

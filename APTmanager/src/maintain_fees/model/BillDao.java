@@ -27,13 +27,13 @@ public class BillDao {
 		}
 		return new SqlSessionFactoryBuilder().build(in);
 	}
-	public List<Personal_mgmt_ex> getMonthBill(setIdMonth setIdMonth){
+	public Personal_mgmt_ex getMonthBill(setIdMonth setIdMonth){
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
-		List<Personal_mgmt_ex> list = null;
+		Personal_mgmt_ex pme = null;
 		
 		try 
 		{
-			list = sqlSession.getMapper(BillMapper.class).getMonthBill(setIdMonth);
+			pme = sqlSession.getMapper(BillMapper.class).getMonthBill(setIdMonth);
 		} 
 		catch (Exception e) 
 		{
@@ -43,7 +43,23 @@ public class BillDao {
 			sqlSession.close();
 		}
 		
-		return list;
+		return pme;
+		
+	}
+	public List<Personal_mgmt_ex> getWidthBill(int width){
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		
+		try {
+			
+			List<Personal_mgmt_ex> list = sqlSession.getMapper(BillMapper.class).getWidthBill(width);
+			return list;
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		finally {
+			sqlSession.close();
+		}
+		return null;
 		
 	}
 }

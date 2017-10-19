@@ -32,10 +32,26 @@ public class AptManagerController extends HttpServlet {
 		System.out.println(command);
 		
 		BillController billController = BillController.getInstance();
+		/*여기에 Controllr 를 설정하시오
+		 * 
+		 * 
+		 * 
+		 * 
+		 * 
+		 */
+				
+		
+		
 		ControllerExcuteClass controll;
 		ActionForward forward = null;
 		
 		if (command.matches("^\\S+.(bill)$")) {
+			/*
+			 * 위의 정규식을 이용하여 ^\\S.(guest)$ , ^\\S.(Realestate) 와 같이 입력하시오 
+			 * 각 컨트롤러는 ControllerExcuteClass 를 구현합니다. implements ControllerExcuteClass
+			 * 
+			 * 
+			 * */
 			controll = billController;
 			try {
 				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
