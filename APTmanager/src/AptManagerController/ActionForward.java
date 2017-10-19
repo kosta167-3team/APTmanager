@@ -1,4 +1,4 @@
-package bill.action;
+package AptManagerController;
 
 public class ActionForward {
 	private boolean isRedirect;

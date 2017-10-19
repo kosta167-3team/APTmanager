@@ -1,4 +1,4 @@
-package bill.model;
+package maintain_fees.model;
 
 import java.io.Serializable;
 

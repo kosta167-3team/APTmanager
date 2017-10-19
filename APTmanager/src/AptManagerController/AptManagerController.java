@@ -1,6 +1,7 @@
-package bill.controller;
+package AptManagerController;
 
 import java.io.IOException;
+import java.util.StringTokenizer;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,36 +10,35 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bill.model.BillService;
-import bill.action.Action;
-import bill.action.ActionForward;
-import bill.action.getMonthBill;
-
+import maintain_fees.action.BillController;
 
 @WebServlet("*.bill")
-public class BillController extends HttpServlet 
-{
+public class AptManagerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public BillController() {
-        super();
+    public AptManagerController() {
+
     }
-    public void doProcess(HttpServletRequest request, HttpServletResponse response)	throws ServletException, IOException 
+    public void doProcess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)	throws ServletException, IOException 
     {
-		String requestUri = request.getRequestURI();
-		String contextPath = request.getContextPath();
-		String command = requestUri.substring(contextPath.length() + 1);
-		BillService service = BillService.getInstance();	
+		String requestUri = httpServletRequest.getRequestURI();
+		String command = null;
 		
+		StringTokenizer st1 = new StringTokenizer(requestUri);
+		while(st1.hasMoreTokens()){
+			command = st1.nextToken("/");
+		}
+
 		System.out.println(command);
-
+		
+		BillController billController = BillController.getInstance();
+		ControllerExcuteClass controll;
 		ActionForward forward = null;
-		Action action = null;
-
-		if (command.equals("haha.bill")) {
-			action = new getMonthBill();
+		
+		if (command.matches("^\\S+.(bill)$")) {
+			controll = billController;
 			try {
-				forward = action.excute(request, response,service);
+				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -74,16 +74,15 @@ public class BillController extends HttpServlet
 
 		if (forward != null) {
 			if (forward.isRedirect()) {
-				response.sendRedirect(forward.getPath());
+				httpServletResponse.sendRedirect(forward.getPath());
 			} else {
-				RequestDispatcher dispatcher = request.getRequestDispatcher(forward.getPath());
-				dispatcher.forward(request, response);
+				RequestDispatcher dispatcher = httpServletRequest.getRequestDispatcher(forward.getPath());
+				dispatcher.forward(httpServletRequest, httpServletResponse);
 
 			}
 		}
 	}
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 		doProcess(request, response);
 	}
 

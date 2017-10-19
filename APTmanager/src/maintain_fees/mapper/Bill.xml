@@ -4,7 +4,7 @@
 
 
 
-<mapper namespace="bill.mapper.BillMapper">
+<mapper namespace="maintain_fees.mapper.BillMapper">
 	<cache />
 	<select id="getMonthBill" parameterType="setIdMonth" resultType="Personal_mgmt_ex">
 		SELECT * FROM personal_mgmt_ex where u_id = #{u_id} AND p_month = #{p_month}

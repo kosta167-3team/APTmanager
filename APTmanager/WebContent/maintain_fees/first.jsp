@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-	location.href="haha.bill";
+	location.href="haha32123.bill";
 </script>
 </head>
 <body>

@@ -1,4 +1,4 @@
-package bill.model;
+package maintain_fees.model;
 
 public class setIdMonth {
 	private String u_id;

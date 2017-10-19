@@ -1,4 +1,4 @@
-package bill.action;
+package maintain_fees.action;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -7,16 +7,20 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import bill.model.BillService;
-import bill.model.Personal_mgmt_ex;
-import bill.model.setIdMonth;
+import AptManagerController.Action;
+import AptManagerController.ActionForward;
+import maintain_fees.model.BillService;
+import maintain_fees.model.Personal_mgmt_ex;
+import maintain_fees.model.setIdMonth;
 
 public class getMonthBill implements Action {
 
 	@Override
-	public ActionForward excute(HttpServletRequest request, HttpServletResponse response, BillService service)	throws Exception {
+	public ActionForward excute(HttpServletRequest request, HttpServletResponse response )	throws Exception {
 		
-		System.out.println("jhh");
+		
+		BillService service = BillService.getInstance();
+
 		Date today =new Date();
 		
 		SimpleDateFormat sdf0;
@@ -24,12 +28,12 @@ public class getMonthBill implements Action {
 		System.out.println(sdf0.format(today));
 		
 		List<Personal_mgmt_ex>list = service.getMonthBill(new setIdMonth("dmsql123", sdf0.format(today)) );
-		System.out.println("jhh");
+
 		ActionForward actionForward = new ActionForward();
 		request.setAttribute("list", list);
 		
 		actionForward.setRedirect(false);
-		actionForward.setPath("/haha.jsp");
+		actionForward.setPath("/maintain_fees/haha32123.jsp");
 	
 			
 		

@@ -1,9 +1,9 @@
-package bill.mapper;
+package maintain_fees.mapper;
 
 import java.util.List;
 
-import bill.model.Personal_mgmt_ex;
-import bill.model.setIdMonth;
+import maintain_fees.model.Personal_mgmt_ex;
+import maintain_fees.model.setIdMonth;
 
 public interface BillMapper {
 	List<Personal_mgmt_ex> getMonthBill(setIdMonth setIdMonth);
