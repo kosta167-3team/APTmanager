@@ -4,10 +4,13 @@
 
 
 
-<mapper namespace="bill.mapper.BillMapper">
+<mapper namespace="maintain_fees.mapper.BillMapper">
 	<cache />
 	<select id="getMonthBill" parameterType="setIdMonth" resultType="Personal_mgmt_ex">
-		SELECT * FROM personal_mgmt_ex where u_id = #{u_id} AND p_month = #{p_month}
+		SELECT * FROM personal_mgmt_ex WHERE u_id = #{u_id} AND p_month = #{p_month}
+	</select>
+	<select id="getWidthBill" parameterType="int" resultType="Personal_mgmt_ex">
+	 	SELECT * FROM personal_mgmt_ex WHERE width = #{width}	
 	</select>
 	
 	<!-- <select id="selectB_id" resultType="Integer">

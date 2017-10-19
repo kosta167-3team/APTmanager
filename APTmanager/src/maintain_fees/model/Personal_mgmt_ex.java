@@ -1,4 +1,4 @@
-package bill.model;
+package maintain_fees.model;
 
 import java.io.Serializable;
 
@@ -24,13 +24,14 @@ public class Personal_mgmt_ex implements Serializable{
 	private int resident_repre;
 	private int emc;
 	private String pay_check;
+	private int width;
 	
 	public Personal_mgmt_ex(){};
-	
+
 	public Personal_mgmt_ex(int input_num, String p_month, String u_id, int general_mgmt, int clean, int fumigate,
 			int elevator_maintain, int repair, int long_term_repair, int building_insurance, int security,
 			int consignment, int personal_elec, int public_elec, int tv, int personal_water, int personal_heat_water,
-			int trash_pick_up, int resident_repre, int emc, String pay_check) {
+			int trash_pick_up, int resident_repre, int emc, String pay_check, int width) {
 		super();
 		this.input_num = input_num;
 		this.p_month = p_month;
@@ -53,7 +54,10 @@ public class Personal_mgmt_ex implements Serializable{
 		this.resident_repre = resident_repre;
 		this.emc = emc;
 		this.pay_check = pay_check;
+		this.width = width;
 	}
+
+
 	public int getInput_num() {
 		return input_num;
 	}
@@ -181,6 +185,62 @@ public class Personal_mgmt_ex implements Serializable{
 		this.pay_check = pay_check;
 	}
 	
-	
-	
+	public int getWidth() {
+		return width;
 	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	public void compareSet(Personal_mgmt_ex first, Personal_mgmt_ex second){		
+		setBuilding_insurance( first.getBuilding_insurance() - second.getBuilding_insurance() );
+		
+		setClean(first.getClean() - second.getClean());
+		setConsignment(first.getConsignment() - second.getConsignment());
+		setElevator_maintain(first.getElevator_maintain() - second.getElevator_maintain());
+		setEmc(first.getEmc() - second.getEmc());
+		setFumigate(first.getFumigate() - second.getFumigate());
+		
+		
+		setGeneral_mgmt(first.getGeneral_mgmt() - second.getGeneral_mgmt());
+		setInput_num(first.getInput_num() - second.getInput_num());
+		setLong_term_repair(first.getLong_term_repair() - second.getLong_term_repair());
+		setP_month(first.getP_month());
+		
+		setPersonal_elec(first.getPersonal_elec() - second.getPersonal_elec());
+		setPersonal_heat_water(first.getPersonal_heat_water() - second.getPersonal_heat_water());
+		setPersonal_water(first.getPersonal_water() - second.getPersonal_water());
+		setPublic_elec(first.getPublic_elec() - second.getPublic_elec());
+		setRepair(first.getRepair() - second.getRepair() );
+		setResident_repre(first.getResident_repre() - second.getResident_repre());
+		setSecurity(first.getSecurity() - second.getSecurity());
+		setTrash_pick_up(first.getTrash_pick_up() - second.getTrash_pick_up());
+		setTv(first.getTv() - second.getTv());
+		setU_id(first.getU_id());
+
+	}
+
+	@Override
+	public String toString() {
+		return "Personal_mgmt_ex [input_num=" + input_num + ", p_month=" + p_month + ", u_id=" + u_id
+				+ ", general_mgmt=" + general_mgmt + ", clean=" + clean + ", fumigate=" + fumigate
+				+ ", elevator_maintain=" + elevator_maintain + ", repair=" + repair + ", long_term_repair="
+				+ long_term_repair + ", building_insurance=" + building_insurance + ", security=" + security
+				+ ", consignment=" + consignment + ", personal_elec=" + personal_elec + ", public_elec=" + public_elec
+				+ ", tv=" + tv + ", personal_water=" + personal_water + ", personal_heat_water=" + personal_heat_water
+				+ ", trash_pick_up=" + trash_pick_up + ", resident_repre=" + resident_repre + ", emc=" + emc
+				+ ", pay_check=" + pay_check + ", width=" + width + "]";
+	}
+	public int allBill(){
+		int sum = 0;
+		
+		sum = general_mgmt + clean + elevator_maintain + fumigate+ repair+ long_term_repair+ building_insurance+ security+ consignment
+				+ personal_elec + public_elec + tv + personal_water + personal_heat_water + trash_pick_up + resident_repre + emc;
+		return sum;
+	}
+
+	
+	
+	
+}
