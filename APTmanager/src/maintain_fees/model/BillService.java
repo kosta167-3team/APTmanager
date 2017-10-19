@@ -1,4 +1,4 @@
-package bill.model;
+package maintain_fees.model;
 
 import java.util.List;
 
@@ -11,10 +11,13 @@ public class BillService {
 		
 		return service;
 	}
-	public List<Personal_mgmt_ex> getMonthBill(setIdMonth setIdMonth){
-		List<Personal_mgmt_ex> list = billDao.getMonthBill(setIdMonth);
+	public Personal_mgmt_ex getMonthBill(setIdMonth setIdMonth){
+		Personal_mgmt_ex pme = billDao.getMonthBill(setIdMonth);
 		
-		return list;
+		return pme;
+	}
+	public List<Personal_mgmt_ex> getWidthBill(int width){
+		return billDao.getWidthBill(width);
 	}
 	
 	

@@ -6,7 +6,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-	location.href="haha.bill";
+	/*  location.href="month.bill"; */
+	 /*location.href = "yearMonth.bill" */
+ 	location.href = "width.bill"; 
+	
 </script>
 </head>
 <body>

@@ -1,12 +1,16 @@
-package bill.model;
+package maintain_fees.model;
 
-public class setIdMonth {
+public class SetIdMonthWidth {
 	private String u_id;
 	private String p_month;
-	public setIdMonth(String u_id, String p_month) {
+	private int width;
+	
+	public SetIdMonthWidth(){};
+	public SetIdMonthWidth(String u_id, String p_month, int width) {
 		super();
 		this.u_id = u_id;
 		this.p_month = p_month;
+		this.width = width;
 	}
 	public String getU_id() {
 		return u_id;
@@ -20,9 +24,13 @@ public class setIdMonth {
 	public void setP_month(String p_month) {
 		this.p_month = p_month;
 	}
-	
-	
-	
-	
+	public int getWidth() {
+		return width;
+	}
+	public void setWidth(int width) {
+		this.width = width;
+	}
 
+	
+	
 }
