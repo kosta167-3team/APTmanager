@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import guest.action.GuestController;
 import maintain_fees.action.BillController;
 
 @WebServlet("*.bill")
@@ -32,7 +33,8 @@ public class AptManagerController extends HttpServlet {
 		System.out.println(command);
 		
 		BillController billController = BillController.getInstance();
-		/*여기에 Controllr 를 설정하시오
+		GuestController guestController = GuestController.getInstance();
+		/*�뿬湲곗뿉 Controllr 瑜� �꽕�젙�븯�떆�삤
 		 * 
 		 * 
 		 * 
@@ -47,8 +49,8 @@ public class AptManagerController extends HttpServlet {
 		
 		if (command.matches("^\\S+.(bill)$")) {
 			/*
-			 * 위의 정규식을 이용하여 ^\\S.(guest)$ , ^\\S.(Realestate) 와 같이 입력하시오 
-			 * 각 컨트롤러는 ControllerExcuteClass 를 구현합니다. implements ControllerExcuteClass
+			 * �쐞�쓽 �젙洹쒖떇�쓣 �씠�슜�븯�뿬 ^\\S.(guest)$ , ^\\S.(Realestate) �� 媛숈씠 �엯�젰�븯�떆�삤 
+			 * 媛� 而⑦듃濡ㅻ윭�뒗 ControllerExcuteClass 瑜� 援ы쁽�빀�땲�떎. implements ControllerExcuteClass
 			 * 
 			 * 
 			 * */
@@ -58,14 +60,14 @@ public class AptManagerController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} /*else if ( command.equals("insertAction.do") ) {
-			action = new InsertAction();
+		} else if ( command.equals("^\\S+.(guest)$") ) {
+			controll = guestController;
 			try {
-				forward = action.excute(request, response);
+				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if(command.equals("listAction.do")) {
+		} /*else if(command.equals("listAction.do")) {
 			action = new ListAction();
 			try {
 				forward = action.excute(request, response);
