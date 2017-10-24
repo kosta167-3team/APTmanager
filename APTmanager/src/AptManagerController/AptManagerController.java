@@ -10,7 +10,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
+import guest.action.GuestController;
+
 import facility_reservation.action.FacilityController;
+
 import maintain_fees.action.BillController;
 import real_estate.action.RealEstateController;
 
@@ -38,9 +42,9 @@ public class AptManagerController extends HttpServlet {
 		System.out.println(command);
 
 		BillController billController = BillController.getInstance();
-
+		GuestController guestController = GuestController.getInstance();
 		RealEstateController nreController = RealEstateController.getInstance();
-		/*여기에 Controllr 를 설정하시오
+
 		 * 
 		 * 
 		 * 
@@ -63,22 +67,18 @@ public class AptManagerController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-			//facility
+		} else if ( command.matches("^\\S+.(guest)$") ) {
+			controll = guestController;
+			System.out.println("inController");
+			try {
+        forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
 		}else if (command.matches("^\\S+.(facility)$")) {
 			controll = facilityController;
-			
 			try {
-			 	//컨트롤러 액션 익세큐트 ← 각 액션 클래스에서 지정해준 것
 				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-
-		
-	
-		 
-		 	//각 액션 클래스에서 지정해준 것
-
 		} else if ( command.matches("^\\S+.(realEstate)$") ) {
 			controll = nreController;
 			System.out.println("실행 : " +command);
