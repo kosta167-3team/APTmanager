@@ -163,7 +163,7 @@ function __doPostBack(eventTarget, eventArgument) {
 					<li><a href="http://www.prugio.com/brand/story.aspx">브랜드 스토리</a></li>
 					<!--<li><a href="http://www.prugio.com/brand/valley.aspx">푸르지오 밸리</a></li>-->
 					<li><a href="http://www.prugio.com/brand/news.aspx">푸르지오 소식</a></li>
-					<li><a href="http://www.prugio.com/brand/pr-video.aspx">브랜드 PR</a></li>
+					<li><a href="http://www.prugio.com/brand/pr-video.aspx">브랜드 PRa</a></li>
 					<li><a href="http://www.prugio.com/brand/award.aspx">수상경력</a></li>
 					<li><a href="http://www.prugio.com/brand/record.aspx">시공실적</a></li>
 					<li class="wide"><a href="http://www.prugio.com/brand/redevelop.aspx">재개발/재건축/<br>리모델링</a></li>
