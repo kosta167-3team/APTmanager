@@ -11,8 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import maintain_fees.action.BillController;
+import real_estate.action.RealEstateController;
 
-@WebServlet(  urlPatterns = {"*.bill","*.guest"}  )
+@WebServlet(  urlPatterns = {"*.bill","*.guest","*.realEstate"}  )
 public class AptManagerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -32,6 +33,7 @@ public class AptManagerController extends HttpServlet {
 		System.out.println(command);
 		
 		BillController billController = BillController.getInstance();
+		RealEstateController nreController = RealEstateController.getInstance();
 		/*여기에 Controllr 를 설정하시오
 		 * 
 		 * 
@@ -58,14 +60,15 @@ public class AptManagerController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} /*else if ( command.equals("insertAction.do") ) {
-			action = new InsertAction();
+		} else if ( command.matches("^\\S+.(realEstate)$") ) {
+			controll = nreController;
+			System.out.println("실행 : " +command);
 			try {
-				forward = action.excute(request, response);
+				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if(command.equals("listAction.do")) {
+		} /*else if(command.equals("listAction.do")) {
 			action = new ListAction();
 			try {
 				forward = action.excute(request, response);
@@ -87,7 +90,9 @@ public class AptManagerController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}*/
-
+		else{
+			System.out.println("실패... command:" + command);
+		}
 		if (forward != null) {
 			if (forward.isRedirect()) {
 				httpServletResponse.sendRedirect(forward.getPath());
