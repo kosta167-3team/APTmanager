@@ -10,52 +10,59 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import guest.action.GuestController;
-import maintain_fees.action.BillController;
 
-@WebServlet(urlPatterns = {"*.bill","*.guest"}  )
+import guest.action.GuestController;
+
+import facility_reservation.action.FacilityController;
+
+import maintain_fees.action.BillController;
+import real_estate.action.RealEstateController;
+
+
+@WebServlet(  urlPatterns = {"*.bill","*.guest","*.realEstate", "*.facility"}  )
+
 public class AptManagerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public AptManagerController() {
+	public AptManagerController() {
 
-    }
-    public void doProcess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)	throws ServletException, IOException 
-    {
+	}
+
+	public void doProcess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
+			throws ServletException, IOException {
+		System.out.println("컨트롤러");
 		String requestUri = httpServletRequest.getRequestURI();
 		String command = null;
-		
+
 		StringTokenizer st1 = new StringTokenizer(requestUri);
-		while(st1.hasMoreTokens()){
+		while (st1.hasMoreTokens()) {
 			command = st1.nextToken("/");
 		}
 
 		System.out.println(command);
-		
+
 		BillController billController = BillController.getInstance();
 		GuestController guestController = GuestController.getInstance();
-		/*�뿬湲곗뿉 Controllr 瑜� �꽕�젙�븯�떆�삤
+		RealEstateController nreController = RealEstateController.getInstance();
+
 		 * 
 		 * 
 		 * 
 		 * 
 		 * 
 		 */
-				
 		
-		
+			//facility
+		FacilityController facilityController = FacilityController.getInstance();
+	 
+
 		ControllerExcuteClass controll;
 		ActionForward forward = null;
-		
+
 		if (command.matches("^\\S+.(bill)$")) {
-			/*
-			 * �쐞�쓽 �젙洹쒖떇�쓣 �씠�슜�븯�뿬 ^\\S.(guest)$ , ^\\S.(Realestate) �� 媛숈씠 �엯�젰�븯�떆�삤 
-			 * 媛� 而⑦듃濡ㅻ윭�뒗 ControllerExcuteClass 瑜� 援ы쁽�빀�땲�떎. implements ControllerExcuteClass
-			 * 
-			 * 
-			 * */
 			controll = billController;
 			try {
+			 	//컨트롤러 액션 익세큐트 ← 각 액션 클래스에서 지정해준 것
 				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
 			} catch (Exception e) {
 				e.printStackTrace();
@@ -63,6 +70,18 @@ public class AptManagerController extends HttpServlet {
 		} else if ( command.matches("^\\S+.(guest)$") ) {
 			controll = guestController;
 			System.out.println("inController");
+			try {
+        forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
+		}else if (command.matches("^\\S+.(facility)$")) {
+			controll = facilityController;
+			try {
+				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if ( command.matches("^\\S+.(realEstate)$") ) {
+			controll = nreController;
+			System.out.println("실행 : " +command);
 			try {
 				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
 			} catch (Exception e) {
@@ -90,7 +109,9 @@ public class AptManagerController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}*/
-
+		else{
+			System.out.println("실패... command:" + command);
+		}
 		if (forward != null) {
 			if (forward.isRedirect()) {
 				httpServletResponse.sendRedirect(forward.getPath());
@@ -101,11 +122,14 @@ public class AptManagerController extends HttpServlet {
 			}
 		}
 	}
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doProcess(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		doProcess(request, response);
 	}

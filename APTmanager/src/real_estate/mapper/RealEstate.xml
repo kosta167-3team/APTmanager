@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+<mapper namespace="real_estate.mapper.RealEstateMapper">
+	<cache />
+	<!-- 전세 insert  -->
+	<insert id="insertRealEstate_Rent" parameterType="RealEstate_rent">
+		insert into REALESTATE_RENT
+			(rr_id,a_name,rr_year,rr_month,rr_deposit,rr_m_price,rr_area)
+		values
+			(rr_seq.NEXTVAL,#{a_name},#{rr_year},#{rr_month},#{rr_deposit},0,#{rr_area})
+	</insert>
+	
+	<!-- 매매 insert  -->
+	<insert id="insertRealEstate_Trade" parameterType="RealEstate_trade">
+		insert into REALESTATE_TRADE
+			(rt_id,a_name,rt_year,rt_month,rt_price,rt_area)
+		values
+			(rt_seq.NEXTVAL,#{a_name},#{rt_year},#{rt_month},#{rt_price},#{rt_area})
+	</insert>
+	
+	<!-- 전세 delete -->
+	<delete id="deleteNRealEstate_Rent" parameterType="int">
+		delete from REALESTATE_RENT
+		where rr_month = #{rr_month}
+	</delete>
+	
+	<!-- 매매 delete -->
+	<delete id="deleteNRealEstate_Trade" parameterType="int">
+		delete from REALESTATE_TRADE
+		where rt_month = #{rt_month}
+	</delete>
+	
+	<!-- 삼성 힐스테이트 1단지  최근 전세가격 보기-->
+	<select id="showMyAptRent" resultType="RealEstate_rent">
+		SELECT A_NAME,RR_YEAR,RR_MONTH,ROUND(AVG( RR_DEPOSIT/RR_AREA)) "rr_deposit"
+		FROM REALESTATE_RENT
+		GROUP BY A_NAME,RR_MONTH,RR_YEAR
+		HAVING RR_MONTH =(
+ 			 SELECT TO_CHAR(sysdate,'MM')-1 FROM dual
+		)AND A_NAME = '삼성동힐스테이트 1단지'        
+	</select>
+	<!-- 삼성 힐스테이트 1단지  최근 매매가격 보기-->
+	<select id="showMyAptTrade" resultType="RealEstate_trade">
+		SELECT A_NAME,RT_YEAR,RT_MONTH,ROUND(AVG( RT_PRICE/RT_AREA)) "rt_price"
+		FROM REALESTATE_TRADE
+		GROUP BY A_NAME,RT_MONTH,RT_YEAR
+		HAVING RT_MONTH =(
+ 			 SELECT TO_CHAR(sysdate,'MM')-1 FROM dual
+		)AND A_NAME = '삼성동힐스테이트 1단지'        
+	</select>
+	
+	<!-- 삼성 힐스테이트 1단지 1년치 매달 최대 최소 전세 List -->
+	<select id="showMyAptRentAnnual" resultType="RealEstate_rent">
+		SELECT A_NAME, RR_YEAR, RR_MONTH  , ROUND(AVG( RR_DEPOSIT/RR_AREA)) "rr_deposit"
+		FROM REALESTATE_RENT
+		GROUP BY RR_YEAR, RR_MONTH, A_NAME
+		HAVING A_NAME='삼성동힐스테이트 1단지'
+    	ORDER BY RR_YEAR, RR_MONTH
+	</select>
+	
+	<!-- 삼성 힐스테이트 1단지 1년치 매달 최대 최소 전세 List -->
+	<select id="showMyAptTradeAnnual" resultType="RealEstate_trade">
+	 	SELECT A_NAME, RT_YEAR, RT_MONTH  , ROUND(MAX( RT_PRICE/RT_AREA)) "rt_max",ROUND(MIN( RT_PRICE/RT_AREA)) "rt_min"
+		FROM REALESTATE_TRADE
+		GROUP BY RT_YEAR, RT_MONTH, A_NAME
+		HAVING A_NAME='삼성동힐스테이트 1단지'
+    	ORDER BY RT_YEAR, RT_MONTH
+	</select>
+	<!-- 
+	<insert id="insertBoard" parameterType="Board">
+		insert into board2(
+			b_id, b_name, b_title, b_content, b_pwd, b_hit, b_date,
+			b_ref, b_step, b_level, b_fname
+		)values(
+			#{b_id}, #{b_name}, #{b_title}, #{b_content}, #{b_pwd},
+			0, SYSDATE, #{b_ref}, #{b_step}, #{b_level},  #{b_fname}
+		)
+	</insert>
+	
+	<select id="listBoard" resultType="Board" parameterType="Search">
+		select * from board2 
+		<if test="area != null">
+			<where>
+				b_title LIKE %Java% OR b_name LIKE %Java%
+				<foreach collection="area" item = "item" separator="OR" open="(" close=")">
+					${item} LIKE #{searchKey}
+				</foreach>
+			</where>
+		</if>
+		order by b_ref desc, b_step asc
+	</select>
+
+	
+	<select id="countBoard" resultType="int" parameterType="Search">
+		select count(*) from board2 
+		<if test="area != null">
+			<where>
+				b_title LIKE %Java% OR b_name LIKE %Java%
+				<foreach collection="area" item = "item" separator="OR" open="(" close=")">
+					${item} LIKE #{searchKey}
+				</foreach>
+			</where>
+		</if>
+	</select>
+ -->
+</mapper>

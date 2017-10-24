@@ -1,7 +1,12 @@
 eclipse.preferences.version=1
+
 encoding//WebContent/kko/kkotest.jsp=UTF-8
 encoding//WebContent/kko/kkotest1.jsp=UTF-8
 encoding//WebContent/kko/kkotest2.jsp=UTF-8
 encoding//src/AptManagerController/AptManagerController.java=UTF-8
 encoding//src/guest/action/GuestController.java=UTF-8
 encoding//src/guest/model/GuestDao.java=UTF-8
+
+encoding//WebContent/Main.jsp=UTF-8
+encoding//WebContent/ha.jsp=UTF-8
+

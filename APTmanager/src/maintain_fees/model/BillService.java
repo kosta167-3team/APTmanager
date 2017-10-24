@@ -19,6 +19,9 @@ public class BillService {
 	public List<Personal_mgmt_ex> getWidthBill(int width){
 		return billDao.getWidthBill(width);
 	}
+	public List<Personal_mgmt_ex> getAllMonthBill(String p_month){
+		return billDao.getAllMonthBill(p_month);
+	}
 	
 	
 	
