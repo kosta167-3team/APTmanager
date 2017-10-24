@@ -4,7 +4,6 @@
 
 <mapper namespace="facility_reservation.mapper.FacilityMapper">
 
-
 	<!-- getDetail; 시설 조회 -->
 	<select id="getDetail" parameterType="int" resultType="Facility">
 
@@ -33,7 +32,7 @@
 
 	<!-- Reserve; 예약하기 -->
 	<!-- 1. 중복 예약 확인; CheckDoubleBook -->
-	<select id="checkDoubleBook" parameterType="" resultType="int">
+	<select id="checkDoubleBook" parameterType="Facility_reservation" resultType="int">
 		select
 		r_id, f_id, t_id from facility_reservation
 		where t_id = #{t_id}
