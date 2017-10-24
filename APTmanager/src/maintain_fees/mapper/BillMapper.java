@@ -9,4 +9,5 @@ import maintain_fees.model.setIdMonth;
 public interface BillMapper {
 	Personal_mgmt_ex getMonthBill(setIdMonth setIdMonth);
 	List<Personal_mgmt_ex> getWidthBill(int width);
+	List<Personal_mgmt_ex> getAllMonthBill(String p_month);
 }

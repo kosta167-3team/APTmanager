@@ -12,6 +12,9 @@
 	<select id="getWidthBill" parameterType="int" resultType="Personal_mgmt_ex">
 	 	SELECT * FROM personal_mgmt_ex WHERE width = #{width}	
 	</select>
+	<select id="getAllMonthBill" parameterType="String" resultType="Personal_mgmt_ex">
+		SELECT * FROM personal_mgmt_ex WHERE p_month = #{p_month} 
+	</select>
 	
 	<!-- <select id="selectB_id" resultType="Integer">
 		select max(b_id) from board2
