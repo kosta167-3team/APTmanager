@@ -1,6 +1,7 @@
 package maintain_fees.model;
 
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.io.Resources;
@@ -61,5 +62,22 @@ public class BillDao {
 		}
 		return null;
 		
+	}
+	public List<Personal_mgmt_ex> getAllMonthBill(String p_month){
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		List<Personal_mgmt_ex> list = new ArrayList<Personal_mgmt_ex>();
+		try 
+		{
+			list = sqlSession.getMapper(BillMapper.class).getAllMonthBill(p_month);
+			return list;
+		} 
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		finally{
+			sqlSession.close();
+		}
+		return null;
 	}
 }

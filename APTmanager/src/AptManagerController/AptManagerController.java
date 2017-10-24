@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import maintain_fees.action.BillController;
 import real_estate.action.RealEstateController;
 
-@WebServlet( urlPatterns = {"*.bill","*.realEstate"})
+@WebServlet(  urlPatterns = {"*.bill","*.guest","*.realEstate"}  )
 public class AptManagerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

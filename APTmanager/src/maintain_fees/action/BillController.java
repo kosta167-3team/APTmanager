@@ -59,21 +59,21 @@ public class BillController implements ControllerExcuteClass
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} /*else if(command.equals("detail.do")) {
-			action = new DetailAction();
+		} else if(command.equals("year.bill")) {
+			action = new AllYearAction();
 			try {
-				forward = action.excute(request, response);
+				forward = action.excute(httpServletRequest, httpServletResponse);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if(command.equals("updateAction.do")) {
-			action = new UpdateAction();
+		} else if(command.equals("energy.bill")) {
+			action = new EnergyAction();
 			try {
-				forward = action.excute(request, response);
+				forward = action.excute(httpServletRequest, httpServletResponse);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}*/
+		}
 
 		return forward;
 	}
