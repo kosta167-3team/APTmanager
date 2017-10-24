@@ -1,0 +1,15 @@
+@CHARSET "EUC-KR";
+/* footer */
+#footer .inner {overflow:hidden;width:1100px;margin:0 auto;padding:30px 0 43px;}
+#footer .footer_logo {float:left;margin-right:70px;}
+#footer .center_cont {float:left;}
+#footer .footer_util {overflow:hidden;margin-bottom:15px;font-size:13px;}
+#footer .footer_util:after {display:block;clear:both;content:"";}
+#footer .footer_util a {display:block;float:left;padding-left:20px;background:url(/APTmanager/css/images/common/footer_util_bar.gif) 10px 3px no-repeat;color:#fff;}
+#footer .footer_util a:hover {color:#242424;}
+#footer .footer_util a:first-child {background:none;padding-left:0;}
+#footer address {font-size:11px;color:#fff;}
+#footer .right_cont {float:right;text-align:right;}
+#footer .customer_tel {font-size:16px;font-weight:bold;color:#fff;}
+#footer .dwlogo {display:block;margin-top:15px;}
+#footer .icsi_logo {display:inline-block; margin-left:12px;}
