@@ -1,0 +1,28 @@
+@CHARSET "EUC-KR";
+
+
+/* story */
+.story .lnb {width:170px;}
+.story h4 {font-size:16px;font-weight:bold;color:#333232;}
+.story .txt {margin-top:10px;color:#929292;line-height:22px;}
+.story .story_tab {overflow:hidden;}
+.story .story_tab a {display:block;float:left;width:430px;padding:12px 0 10px;font-size:16px;font-weight:bold;text-align:center;border-bottom:2px solid #c0c0c0;}
+.story .story_tab a.on{width:426px;padding:10px 0 12px;color:#016332;border:2px solid #c0c0c0;border-bottom:none;}
+.story .story_tab a.on.summit_color{color:#a88d7c;}
+.story .story_box {display:none;}
+.story .story_box.on {display:block;}
+.story .story_top {padding-bottom:60px;}
+.story .story_top img {margin-bottom:25px;}
+.story .story_mid {overflow:hidden;padding:50px 0;background:url(../images/common/bg_dot_boder.gif) 0 bottom repeat-x;text-align:center;}
+.story .story_mid .left {float:left;width:430px;padding:40px 0;border-right:1px solid #ccc;}
+.story .story_mid .right {float:right;width:430px;padding-top:45px;font-size:16px;font-weight:bold;line-height:1.4em;}
+.story .story_bot {padding:60px 0 0;}
+.story .story_bot .txt {margin-bottom:40px;}
+.story .story_bot .story_design {padding-left:175px;background:url(../images/common/story_design_bg.jpg) 36px 36px no-repeat;}
+.story .story_bot .story_bi {margin-bottom:80px;}
+.story .story_bot .story_bi h4 {margin-bottom:10px;}
+.story .story_bot .story_bi a {display:block;width:170px;margin:0 auto;padding:10px 0;color:#fff;font-size:13px;font-weight:bold;text-align:center;background:#535353;}
+.story .story_bot .story_font h4 {margin-bottom:10px;}
+.story .story_bot .story_font a {display:block;width:170px;margin:0 auto;padding:10px 0;color:#fff;font-size:13px;font-weight:bold;text-align:center;background:#535353;}
+.story .story_bot .story_catalog {position:relative;width:870px;height:223px;margin-top:94px;background:url(../images/common/story_catalog_bg.jpg)  no-repeat;}
+.story .story_bot .story_catalog a {display:block;position:absolute;top:142px;left:41px;width:163px;height:38px;text-indent:-9999px;}

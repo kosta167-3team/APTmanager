@@ -6,9 +6,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
- location.href="month.bill";  
-	 /*location.href = "yearMonth.bill" */
-/*  	location.href = "width.bill";  */
+
+	/*  location.href="month.bill"; */
+	 /* location.href = "yearMonth.bill"  */
+ 	/* location.href = "width.bill"; */ 
+ 	/* location.href = "year.bill"; */
+ 	location.href = "energy.bill"
+
 	
 </script>
 </head>

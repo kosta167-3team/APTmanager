@@ -12,8 +12,11 @@ import javax.servlet.http.HttpServletResponse;
 
 import facility_reservation.action.FacilityController;
 import maintain_fees.action.BillController;
+import real_estate.action.RealEstateController;
 
-@WebServlet(urlPatterns = { "*.bill", "*.n_realEstate", "*.facility" })
+
+@WebServlet(  urlPatterns = {"*.bill","*.guest","*.realEstate", "*.facility"}  )
+
 public class AptManagerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -35,6 +38,15 @@ public class AptManagerController extends HttpServlet {
 		System.out.println(command);
 
 		BillController billController = BillController.getInstance();
+
+		RealEstateController nreController = RealEstateController.getInstance();
+		/*여기에 Controllr 를 설정하시오
+		 * 
+		 * 
+		 * 
+		 * 
+		 * 
+		 */
 		
 			//facility
 		FacilityController facilityController = FacilityController.getInstance();
@@ -45,7 +57,12 @@ public class AptManagerController extends HttpServlet {
 
 		if (command.matches("^\\S+.(bill)$")) {
 			controll = billController;
-			
+			try {
+			 	//컨트롤러 액션 익세큐트 ← 각 액션 클래스에서 지정해준 것
+				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 			//facility
 		}else if (command.matches("^\\S+.(facility)$")) {
 			controll = facilityController;
@@ -56,10 +73,45 @@ public class AptManagerController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} 
+
+		
 	
 		 
 		 	//각 액션 클래스에서 지정해준 것
+
+		} else if ( command.matches("^\\S+.(realEstate)$") ) {
+			controll = nreController;
+			System.out.println("실행 : " +command);
+			try {
+				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} /*else if(command.equals("listAction.do")) {
+			action = new ListAction();
+			try {
+				forward = action.excute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("detail.do")) {
+			action = new DetailAction();
+			try {
+				forward = action.excute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if(command.equals("updateAction.do")) {
+			action = new UpdateAction();
+			try {
+				forward = action.excute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}*/
+		else{
+			System.out.println("실패... command:" + command);
+		}
 		if (forward != null) {
 			if (forward.isRedirect()) {
 				httpServletResponse.sendRedirect(forward.getPath());
