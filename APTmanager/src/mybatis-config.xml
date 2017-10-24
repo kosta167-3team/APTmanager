@@ -2,11 +2,13 @@
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
-<!-- ㅇ -->
 <configuration>
 	<typeAliases>
 		<typeAlias type="maintain_fees.model.Personal_mgmt_ex" alias = "Personal_mgmt_ex"/>
 		<typeAlias type="maintain_fees.model.setIdMonth" alias = "setIdMonth"/>
+		<typeAlias type="resident.model.Resident" alias = "Resident"/>
+		<typeAlias type="resident.model.Reservation" alias = "Reservation"/>
+		<typeAlias type="resident.model.ListModel" alias = "ListModel"/>
 	</typeAliases>
 	
 	<environments default="development">
@@ -20,7 +22,7 @@
 	
 	<mappers>
 		<mapper resource="maintain_fees/mapper/Bill.xml"/>
-		
+		<mapper resource="resident/mapper/Resident.xml"/>
 	</mappers>
 	
 </configuration>

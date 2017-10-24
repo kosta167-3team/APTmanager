@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="resident.mapper.ResidentMapper">
+	<cache />
+	<select id="getReservationId" resultType="Integer">
+		select max(vr_id) from visit_reservation
+	</select>
+	<select id="login" parameterType="String" resultType="Resident">
+		select * from resident where r_id = #{r_id}	
+	</select>	
+	
+	<insert id="createReservation" parameterType="Reservation">
+		insert into visit_reservation (
+			vr_id, r_id, v_name, v_tel, v_date, vr_date, v_contents, v_check
+		) values (
+			#{vr_id}, #{r_id}, #{v_name}, #{v_tel}, SYSDATE, #{vr_date}, #{v_contents}, '승인'
+		)
+	</insert>
+	<select id="searchReservation" parameterType="String" resultType="Reservation">
+		select * from visit_reservation 
+		where r_id = #{r_id}
+	</select>
+	
+	<select id="getReservationCount" parameterType="String" resultType="Integer">
+		select count(*) from visit_reservation 
+		where r_id = #{r_id}	
+	
+	</select>
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

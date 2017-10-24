@@ -11,16 +11,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import maintain_fees.action.BillController;
+import resident.action.ActionController;
 
-@WebServlet("*.bill")
+@WebServlet(urlPatterns={"*.bill", "*.resident"})
 public class AptManagerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     public AptManagerController() {
 
     }
-    public void doProcess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)	throws ServletException, IOException 
-    {
+    public void doProcess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)	throws ServletException, IOException {
 		String requestUri = httpServletRequest.getRequestURI();
 		String command = null;
 		
@@ -32,6 +32,7 @@ public class AptManagerController extends HttpServlet {
 		System.out.println(command);
 		
 		BillController billController = BillController.getInstance();
+		ActionController actionController = ActionController.getInstance();
 		/*여기에 Controllr 를 설정하시오
 		 * 
 		 * 
@@ -58,14 +59,15 @@ public class AptManagerController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} /*else if ( command.equals("insertAction.do") ) {
-			action = new InsertAction();
+		} else if (command.matches("^\\S+.(resident)$")) {
+			controll = actionController;
 			try {
-				forward = action.excute(request, response);
+				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if(command.equals("listAction.do")) {
+		}  
+		/*else if(command.equals("listAction.do")) {
 			action = new ListAction();
 			try {
 				forward = action.excute(request, response);
