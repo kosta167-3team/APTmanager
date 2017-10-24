@@ -16,13 +16,12 @@
 <link href="/APTmanager/css/common/header.css" rel="stylesheet">
 <link href="/APTmanager/css/common/footer.css" rel="stylesheet">
 <link href="/APTmanager/css/common/saleList.css" rel="stylesheet">
-<link href="/APTmanger/css/main/main.css" rel="stylesheet">
+
+<link href="/APTmanager/css/main/main.css" rel="stylesheet">
 
 <script src="/APTmanager/js/common/jquery.js"></script>
 <script src="/APTmanager/js/main/jquery.jplayer.js"></script>
 <script src="/APTmanager/js/common/common.js"></script>
-
-<link rel="shortcut icon" href="css/images/common/favicon.ico" />
 <title>삼성 힐스테이트 1단지</title>
 <script>
     $(function(){
