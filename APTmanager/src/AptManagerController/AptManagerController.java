@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import guest.action.GuestController;
 import maintain_fees.action.BillController;
 
-@WebServlet("*.bill")
+@WebServlet(urlPatterns = {"*.bill","*.guest"}  )
 public class AptManagerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -60,8 +60,9 @@ public class AptManagerController extends HttpServlet {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if ( command.equals("^\\S+.(guest)$") ) {
+		} else if ( command.matches("^\\S+.(guest)$") ) {
 			controll = guestController;
+			System.out.println("inController");
 			try {
 				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
 			} catch (Exception e) {

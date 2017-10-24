@@ -30,23 +30,23 @@ public class GuestController implements ControllerExcuteClass {
 		ActionForward forward = null;
 		Action action = null;
 		
-		if (commend.equals("month.guest")) {
+		if (commend.equals("nowGuest.guest")) {
 			/* 媛� actionClass �뱾�� Action �겢�옒�뒪瑜� implements �븳�떎.*/
-			action = new getMonthBillAction();
+			action = new getGuestAction();
 			try {
 				forward = action.excute(httpServletRequest, httpServletResponse);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} /*else if ( commend.equals("yearMonth.bill") ) {
-			action = new getYearMonthBillAction();
+		} else if ( commend.equals("FaInsertReview.guest") ) {
+			action = new FaInsertAction();
 			try {
 				forward = action.excute(httpServletRequest, httpServletResponse);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if(command.equals("width.bill")) {
-			action = new CompareWidthAction();
+		} /*else if(commend.equals("facilityReview.guest")) {
+			action = new listReAction();
 			try {
 				forward = action.excute(httpServletRequest, httpServletResponse);
 			} catch (Exception e) {
