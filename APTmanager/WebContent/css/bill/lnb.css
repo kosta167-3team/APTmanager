@@ -1,0 +1,25 @@
+@CHARSET "EUC-KR";
+
+
+/* lnb */
+.lnb {float:left;width:160px;}
+.lnb .lnb_list {display:none;}
+.lnb .lnb_list.on {display:block;}
+.lnb h2 {padding:6px 0 19px 14px;border-bottom:2px solid #cdcdcd;}
+.lnb ul li {border-top:1px solid #e8e8e8;}
+.lnb ul li:first-child {border:none;}
+.lnb ul li a {display:block;font-size:14px;font-weight:bold;color:#55585b;padding:10px 0 10px 12px;}
+.lnb ul li:hover a, .lnb ul li.on a {background:#cdcdcd;font-weight:bold;color:#fff;}
+
+/* sub common */
+.sub_title {overflow:hidden;margin-bottom:35px;}
+.sub_title:after {display:block;clear:both;content:"";}
+.sub_title h2 {float:left;padding-top:2px;}
+.sub_title .top_menu {overflow:hidden;float:right;width:900px;}
+.sub_title p {/*font-size:14px;*/color:#5a5a5a;line-height:1.4em;}
+.contents_box h3 {margin-bottom:8px;font-size:30px;color:#333232;font-weight:bold;}
+.commonBtn {display:inline-block;padding:7.5px 20px;font-size:13px;text-align:center;vertical-align:middle;background:#164c32;color:#fff;}
+.commonBtn.big {width:124px;padding:13px 0;}
+.commonBtn.yellowgreen {background:#96a179;}
+.commonBtn.gray {background:#535353;}
+.commonBtn.black {background:#212121;}

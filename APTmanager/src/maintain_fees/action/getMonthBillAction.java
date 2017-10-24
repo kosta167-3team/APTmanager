@@ -22,7 +22,7 @@ public class getMonthBillAction implements Action {
 		
 		BillService service = BillService.getInstance();
 
-		Date today = new Date();
+		Date today = new Date();                   
 		Personal_mgmt_ex compare = new Personal_mgmt_ex();
 		SimpleDateFormat year_format = new SimpleDateFormat("yy");
 

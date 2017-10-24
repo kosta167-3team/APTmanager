@@ -239,6 +239,25 @@ public class Personal_mgmt_ex implements Serializable{
 				+ personal_elec + public_elec + tv + personal_water + personal_heat_water + trash_pick_up + resident_repre + emc;
 		return sum;
 	}
+	public Double elec_bill(){
+		Double sum = 0.0;
+		int int_sum = getElevator_maintain()+getPersonal_elec()+getPublic_elec()+getTv();
+		
+		sum = (double) (int_sum/4);
+		return sum;
+	}
+	public Double heat_bill(){
+		Double sum = 0.0;
+		int int_sum = getPersonal_heat_water();
+		sum = (double)(int_sum);
+		return sum;
+	}
+	public Double water_bill(){
+		Double sum = 0.0;
+		int int_sum = getPersonal_heat_water() + getPersonal_water();
+		sum = (double)(int_sum)/2;
+		return sum;
+	}
 
 	
 	

@@ -10,64 +10,87 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import maintain_fees.action.BillController;
-import resident.action.ActionController;
 
-@WebServlet(urlPatterns={"*.bill", "*.resident"})
+import guest.action.GuestController;
+
+import facility_reservation.action.FacilityController;
+
+import maintain_fees.action.BillController;
+
+import real_estate.action.RealEstateController;
+
+
+@WebServlet(  urlPatterns = {"*.bill","*.guest","*.realEstate", "*.facility", "*.resident"}  )
+
 public class AptManagerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-    public AptManagerController() {
+	public AptManagerController() {
 
-    }
-    public void doProcess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)	throws ServletException, IOException {
+	}
+
+	public void doProcess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
+			throws ServletException, IOException {
+		System.out.println("컨트롤러");
 		String requestUri = httpServletRequest.getRequestURI();
 		String command = null;
-		
+
 		StringTokenizer st1 = new StringTokenizer(requestUri);
-		while(st1.hasMoreTokens()){
+		while (st1.hasMoreTokens()) {
 			command = st1.nextToken("/");
 		}
 
 		System.out.println(command);
-		
+
 		BillController billController = BillController.getInstance();
+
 		ActionController actionController = ActionController.getInstance();
-		/*여기에 Controllr 를 설정하시오
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 */
-				
 		
+
+		GuestController guestController = GuestController.getInstance();
+		RealEstateController nreController = RealEstateController.getInstance();
 		
+			//facility
+		FacilityController facilityController = FacilityController.getInstance();	 
+
 		ControllerExcuteClass controll;
 		ActionForward forward = null;
-		
+
 		if (command.matches("^\\S+.(bill)$")) {
-			/*
-			 * 위의 정규식을 이용하여 ^\\S.(guest)$ , ^\\S.(Realestate) 와 같이 입력하시오 
-			 * 각 컨트롤러는 ControllerExcuteClass 를 구현합니다. implements ControllerExcuteClass
-			 * 
-			 * 
-			 * */
 			controll = billController;
-			try {
+			try {			
 				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+
 		} else if (command.matches("^\\S+.(resident)$")) {
 			controll = actionController;
 			try {
+        forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
+		} else if ( command.matches("^\\S+.(guest)$") ) {
+			controll = guestController;
+			System.out.println("inController");
+			try {
+        forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
+		}else if (command.matches("^\\S+.(facility)$")) {
+			controll = facilityController;
+			try {
+
+				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}	  
+		} else if ( command.matches("^\\S+.(realEstate)$") ) {
+			controll = nreController;
+			System.out.println("실행 : " +command);
+			try {
 				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}  
-		/*else if(command.equals("listAction.do")) {
+		} /*else if(command.equals("listAction.do")) {
+
 			action = new ListAction();
 			try {
 				forward = action.excute(request, response);
@@ -89,7 +112,9 @@ public class AptManagerController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}*/
-
+		else{
+			System.out.println("실패... command:" + command);
+		}
 		if (forward != null) {
 			if (forward.isRedirect()) {
 				httpServletResponse.sendRedirect(forward.getPath());
@@ -100,11 +125,14 @@ public class AptManagerController extends HttpServlet {
 			}
 		}
 	}
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doProcess(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 
 		doProcess(request, response);
 	}
