@@ -315,16 +315,10 @@ function __doPostBack(eventTarget, eventArgument) {
                             
                                 <ul class='sale_list item'>
                                     <li >
-                                        
-
-                                        
-								            
-                                        
 								            <div class='thumb'><img src='/PrugioBoard/Project/819/thum_default (0).jpg' alt=''></div>
 								            <dl>
 									            <dt>수원 영흥공원(가칭)                                         </dt>
-									            <dd class="location">* 위치 : 경기도 수원시 영통구 영통동 2<br>
-* 총 1,999세대</dd>
+									            <dd class="location">* 위치 : 경기도 수원시 영통구 영통동 2<br>* 총 1,999세대</dd>
 									            <dd class="tel">1670-1000     </dd>
 								            </dl>
 								            <span class="flag type1">예정</span>
@@ -333,15 +327,8 @@ function __doPostBack(eventTarget, eventArgument) {
                                         
                                     </li>
                                 
-                            
-                                
                                     <li >
-                                        
-
-                                        
-								            
-                                        
-								            <div class='thumb'><img src='/PrugioBoard/Project/821/thum_default (0).jpg' alt=''></div>
+								            a<div class='thumb'><img src='/PrugioBoard/Project/821/thum_default (0).jpg' alt=''></div>
 								            <dl>
 									            <dt>창원 교방(가칭)                                             </dt>
 									            <dd class="location">* 위치 : 창원시 마산합포구 교방동 75<br>
