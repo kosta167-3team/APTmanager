@@ -16,10 +16,11 @@ import guest.action.GuestController;
 import facility_reservation.action.FacilityController;
 
 import maintain_fees.action.BillController;
+
 import real_estate.action.RealEstateController;
 
 
-@WebServlet(  urlPatterns = {"*.bill","*.guest","*.realEstate", "*.facility"}  )
+@WebServlet(  urlPatterns = {"*.bill","*.guest","*.realEstate", "*.facility", "*.resident"}  )
 
 public class AptManagerController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -42,31 +43,31 @@ public class AptManagerController extends HttpServlet {
 		System.out.println(command);
 
 		BillController billController = BillController.getInstance();
+
+		ActionController actionController = ActionController.getInstance();
+		
+
 		GuestController guestController = GuestController.getInstance();
 		RealEstateController nreController = RealEstateController.getInstance();
-
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 */
 		
 			//facility
-		FacilityController facilityController = FacilityController.getInstance();
-	 
+		FacilityController facilityController = FacilityController.getInstance();	 
 
 		ControllerExcuteClass controll;
 		ActionForward forward = null;
 
 		if (command.matches("^\\S+.(bill)$")) {
 			controll = billController;
-			try {
-			 	//컨트롤러 액션 익세큐트 ← 각 액션 클래스에서 지정해준 것
+			try {			
 				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+
+		} else if (command.matches("^\\S+.(resident)$")) {
+			controll = actionController;
+			try {
+        forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
 		} else if ( command.matches("^\\S+.(guest)$") ) {
 			controll = guestController;
 			System.out.println("inController");
@@ -75,10 +76,11 @@ public class AptManagerController extends HttpServlet {
 		}else if (command.matches("^\\S+.(facility)$")) {
 			controll = facilityController;
 			try {
+
 				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
 			} catch (Exception e) {
 				e.printStackTrace();
-			}
+			}	  
 		} else if ( command.matches("^\\S+.(realEstate)$") ) {
 			controll = nreController;
 			System.out.println("실행 : " +command);
@@ -88,6 +90,7 @@ public class AptManagerController extends HttpServlet {
 				e.printStackTrace();
 			}
 		} /*else if(command.equals("listAction.do")) {
+
 			action = new ListAction();
 			try {
 				forward = action.excute(request, response);

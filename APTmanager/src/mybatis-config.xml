@@ -2,11 +2,15 @@
 <!DOCTYPE configuration
   PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-config.dtd">
-<!-- ㅇ -->
 <configuration>
 	<typeAliases>
 		<typeAlias type="maintain_fees.model.Personal_mgmt_ex" alias = "Personal_mgmt_ex"/>
 		<typeAlias type="maintain_fees.model.setIdMonth" alias = "setIdMonth"/>
+
+		<typeAlias type="resident.model.Resident" alias = "Resident"/>
+		<typeAlias type="resident.model.Reservation" alias = "Reservation"/>
+		<typeAlias type="resident.model.ListModel" alias = "ListModel"/>
+
 		<typeAlias type="guest.model.Guest" alias = "Guest"/>
 		<typeAlias type="guest.model.GuestRe" alias = "GuestRe"/>
 		
@@ -32,14 +36,11 @@
 	
 	<mappers>
 		<mapper resource="maintain_fees/mapper/Bill.xml"/>
-
+		<mapper resource="resident/mapper/Resident.xml"/>
 		<mapper resource="guest/mapper/guest.xml"/>		
 				<!-- 시설예약  -->
 		<mapper resource="facility_reservation/mapper/Facility.xml"/>		
-
 		<mapper resource="real_estate/mapper/RealEstate.xml"/>	
-
-
 	</mappers>
 	
 </configuration>
