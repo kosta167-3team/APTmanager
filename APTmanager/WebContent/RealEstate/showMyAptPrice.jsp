@@ -16,26 +16,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
-	지난 달 전세<br>
-	
-	${lastMonthRent.a_name}||${lastMonthRent.rr_year}||${lastMonthRent.rr_month}| |${lastMonthRent.rr_deposit}<br>
-	
-	지난 달 매매<br>
-	
-	${lastMonthTrade.a_name} | |${lastMonthTrade.rt_price}<br>
-	
-	<br>
-	1년간 전세 추이<br>
-	<c:forEach var="annualRent" items="${annualRent}">
-		${annualRent.rr_year} | |${annualRent.rr_month} ||${annualRent.rr_max}||${annualRent.rr_min}<br>
-	</c:forEach>
-	<br>
-	1년간 매매 추이<br>
-	<c:forEach var="annualTrade" items="${annualTrade}">
-		 ${annualTrade.rt_year} | |${annualTrade.rt_month} ||${annualTrade.rt_max}||${annualTrade.rt_min}<br> 
-	</c:forEach>
-	
-	
+	<jsp:include page="lastMonth.jsp"></jsp:include>
+	<jsp:include page="annual.jsp"></jsp:include>
 </body>
 </html>
