@@ -15,6 +15,7 @@
 		<typeAlias type="guest.model.Guest" alias = "Guest"/>
 		<typeAlias type="guest.model.GuestRe" alias = "GuestRe"/>
 		
+
 		<typeAlias type="facility_reservation.model.Facility" alias = "Facility"/>
 		<typeAlias type="facility_reservation.model.Facility_time" alias = "Facility_time"/>
 		<typeAlias type="facility_reservation.model.Facility_reservation" alias = "Facility_reservation"/>
@@ -39,7 +40,8 @@
 		<mapper resource="maintain_fees/mapper/Bill.xml"/>
 		<mapper resource="resident/mapper/Resident.xml"/>
 		<mapper resource="guest/mapper/guest.xml"/>		
-		
+
+		<mapper resource="facility_reservation/mapper/Facility.xml"/>
 		<mapper resource="real_estate/mapper/RealEstate.xml"/>	
 	</mappers>
 	

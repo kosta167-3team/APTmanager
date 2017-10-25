@@ -53,7 +53,7 @@
 				</h1>
 				<ul id="gnb" class="gnb">
 					<li class="menu1"><a
-						href="http://www.prugio.com/sale/sale.aspx">분양안내</a>
+						href="http://www.prugio.com/sale/sale.aspx">박은l</a>
 						<ul class="gnb_list">
 							<li><a href="http://www.prugio.com/sale/sale.aspx?menu=0">신규분양</a></li>
 							<li><a href="http://www.prugio.com/sale/sale.aspx?menu=1">추천분양</a></li>
