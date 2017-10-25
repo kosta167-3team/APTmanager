@@ -13,7 +13,7 @@
 	
 		function drawVisualization() { 
 			var data = google.visualization.arrayToDataTable([
-					['dpsjwl', 'Bolivia', 'Ecuador', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
+					['', '전체 평균', '내 사용량', 'Madagascar', 'Papua New Guinea', 'Rwanda', 'Average'],
 					['2004/05',  165,      938,         522,             998,           450,      614.6],
 					['2005/06',  135,      1120,        599,             1268,          288,      682],
 					['2006/07',  157,      1167,        587,             807,           397,      623],
