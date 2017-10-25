@@ -87,7 +87,9 @@ public class AptManagerController extends HttpServlet {
 			}
 		} else if (command.matches("^\\S+.(realEstate)$")) {
 			controll = nreController;
+
 			System.out.println("실행 : " + command);
+
 			try {
 				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
 			} catch (Exception e) {
@@ -106,7 +108,9 @@ public class AptManagerController extends HttpServlet {
 			 * } catch (Exception e) { e.printStackTrace(); } }
 			 */
 		else {
+
 			System.out.println("못 찾음... command:" + command);
+
 		}
 		if (forward != null) {
 			if (forward.isRedirect()) {
