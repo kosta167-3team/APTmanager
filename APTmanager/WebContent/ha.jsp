@@ -177,8 +177,7 @@
 							<img src="/APTmanager/css/images/common/title_h2.gif" alt="브랜드">
 						</h2>
 						<ul class="depth">
-							<li><a href="http://www.prugio.com/brand/story.aspx">브랜드
-									스토리</a></li>
+							<li><a href="http://www.prugio.com/brand/story.aspx">브랜드스토리</a></li>
 							<!--<li><a href="http://www.prugio.com/brand/valley.aspx">푸르지오 밸리</a></li>-->
 							<li><a href="http://www.prugio.com/brand/news.aspx">푸르지오
 									소식</a></li>

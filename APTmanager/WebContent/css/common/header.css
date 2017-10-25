@@ -1,19 +1,15 @@
-@CHARSET "EUC-KR";
+@CHARSET "UTF-8";
 
 /* header */
-/* #header .top_banner{position:relative; height:100px; background:url(/asset/images/common/top_event_banner.jpg) center 0 no-repeat #eee;}
-#header .top_banner .top_inner{position:relative; width:1100px; margin:0 auto;}
-#header .top_banner .top_inner a{display:block; position:absolute; top:0; background:#fff; text-indent:-9999px;}
-#header .top_banner .top_inner #btn_banner_link{left:0; width:640px; height:100px;}
-#header .top_banner .top_inner #btn_banner_close{right:0; width:65px; height:55px;} */
+
 #header .inner {width:1100px;height:61px;margin:0 auto;*zoom:1;}
 #header .inner:after {display:block;clear:both;content:"";}
-#header h1 {float:left;padding:24px 112px 0 0;}
-.gnb {float:left;padding-top:24px;*zoom:1;}
+#header h1 {float:left;padding:24px 10px 0 0;}
+.gnb {float:left;padding-top:24px;margin-right:100px;margin-left:100px;*zoom:1;}
 .gnb:after {display:block;clear:both;content:"";}
 .gnb > li {float:left;position:relative;padding:0 77px 22px 0;z-index:200;}
 .gnb > li.menu2 {padding-right:65px;}
-.gnb > li > a {display:block;overflow:hidden;width:40px;height:16px;text-indent:-9999px;background:url(/APTmanager/css/images/common/gnb.png) left top no-repeat;}
+.gnb > li > a {display:inline;  width:40px;height:16px;color: black; font-size:15px; font-weight: bold;}
 .gnb .menu1 > a {width:53px;background-position:0 0;}
 .gnb .menu2 > a {width:52px;background-position:-55px 0;}
 .gnb .menu3 > a {background-position:-108px 0;}
@@ -35,7 +31,7 @@
 .gnb .gnb_list li a {display:inline-block;padding-bottom:3px;color:#777;letter-spacing:-0.5px;}
 .gnb .gnb_list li.on a, .gnb .gnb_list li:hover a {padding-bottom:2px;font-weight:bold;color:#141414;border-bottom:1px solid #333;}
 .gnb_bg {position:absolute;top:61px;left:0;width:100%;height:0;background:url(/APTmanager/css/images/common/gnb_bg.png) center bottom repeat-x #efefef;border-bottom:1px solid #bbb;z-index:100;}
-#header .util {float:right;overflow:hidden;padding-top:24px;font-size:13px;}
+#header .util {float:right;overflow:hidden;padding-top:24px;font-size:13px; display: inline;position:absolute;}
 #header .util:after {display:block;clear:both;content:"";}
 #header .util a {display:block;float:left;padding:0 7px;background:url(/APTmanager/css/images/common/util_bar.gif) 0 3px no-repeat;color:#c2c885;}
 #header .util a:hover {color:#fff;}
