@@ -26,6 +26,9 @@ public class ResidentService {
 	public int createReservation(Reservation reservation) {
 		return residentDao.createReservation(reservation);
 	}
+	public int deleteReservation(String vr_id) {
+		return residentDao.deleteReservation(vr_id);
+	}
 
 	public ListModel searchReservation(String r_id, int requestPage) {
 		// 페이지당 글갯수, 총글갯수, 총페이지수, 시작페이지, 마지막페이지, 현재페이지
@@ -45,5 +48,12 @@ public class ResidentService {
 		List<Reservation> list = residentDao.searchReservation(r_id, requestPage);
 
 		return new ListModel(list, requestPage, totalPageCount, startPage, endPage);
+	}
+	
+	public int searchDong(String r_id) {
+		return residentDao.searchDong(r_id);
+	}
+	public int searchHo(String r_id) {
+		return residentDao.searchHo(r_id);
 	}
 }

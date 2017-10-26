@@ -14,14 +14,14 @@ public class LoginAction implements Action{
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ResidentService residentService = ResidentService.getInstance();
 		ActionForward forward = new ActionForward();
+		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
-		session.setAttribute("r_id", request.getParameter("r_id"));
-		session.setAttribute("r_pw", request.getParameter("r_pw"));
 		String r_id = request.getParameter("r_id");
 		String r_pw = request.getParameter("r_pw");
 		
 		if(residentService.selectResident(r_id) != null &&
 				residentService.selectResident(r_id).getR_pw().equals(r_pw)){
+			session.setAttribute("r_id", request.getParameter("r_id"));
 			forward.setPath("/resident/mainForm.jsp"); // 내가 갈곳	
 			request.setAttribute("resident", residentService.selectResident(r_id));
 		} else {
