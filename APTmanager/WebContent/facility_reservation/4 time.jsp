@@ -13,6 +13,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+<script type="text/javascript">
+	$(function() {
+		$(".button").click(function() {
+			location.href = "count.facility?t_id=" + $(this).val();
+		});
+	});
+</script>
 </head>
 <body>
 
@@ -23,11 +33,15 @@
 
 			<c:if test="${t.t_id == m.key}">
 				<c:set var="spot" value="${m.value}"></c:set>
+				<c:set var="t_id" value="${m.key}"></c:set>
+
 			</c:if>
 
 		</c:forEach>
-
-		<input type="button" value="${t.t_start } ~ ${t.t_end }">  남은 자리 ${ spot}  /  총 ${capa} </input>
+		<button class="button" value="${t.t_id }">${t.t_start }~
+			${t.t_end }</button>
+남은 자리 ${ spot}  /  총 ${capa}
+		<input type="hidden" value=${t.t_id } class="button">
 		<br>
 	</c:forEach>
 

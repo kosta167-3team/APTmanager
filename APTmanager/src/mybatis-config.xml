@@ -14,7 +14,6 @@
 
 		<typeAlias type="guest.model.Guest" alias = "Guest"/>
 		<typeAlias type="guest.model.GuestRe" alias = "GuestRe"/>
-		
 
 		<typeAlias type="facility_reservation.model.Facility" alias = "Facility"/>
 		<typeAlias type="facility_reservation.model.Facility_time" alias = "Facility_time"/>

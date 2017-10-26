@@ -12,7 +12,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-
 </head>
 <body>
 
@@ -21,8 +20,8 @@
 	<p>${facility.f_contents}</p>
 	<p>수용 가능 인원: ${facility.f_capa}</p>
 	<br>
-	<c:forEach var="date" items="${date }">
- 	<a href="options.facility">${date }</a><br>
+	<c:forEach var="d" items="${date }">
+ 	<a href="time.facility?date=${d }" >${d }</a><br>
 	</c:forEach>
 </body>
 </html>
