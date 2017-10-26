@@ -80,8 +80,8 @@ public class InqRealStateAction implements Action {
 
 			forword.setRedirect(false);
 			forword.setPath("xmlParser.realEstate");
-		}*/
-
+		}
+*/
 		return forword;
 	}
 
