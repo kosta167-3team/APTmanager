@@ -30,7 +30,7 @@ public class AptManagerController extends HttpServlet {
 
 	public void doProcess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
 			throws ServletException, IOException {
-		System.out.println("컨트롤러");
+		System.out.println("而⑦듃濡ㅻ윭");
 		String requestUri = httpServletRequest.getRequestURI();
 		String command = null;
 

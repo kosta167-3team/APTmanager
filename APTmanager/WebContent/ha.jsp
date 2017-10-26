@@ -53,7 +53,7 @@
 				</h1>
 				<ul id="gnb" class="gnb">
 					<li class="menu1"><a
-						href="http://www.prugio.com/sale/sale.aspx">분양안내</a>
+						href="http://www.prugio.com/sale/sale.aspx">박은l</a>
 						<ul class="gnb_list">
 							<li><a href="http://www.prugio.com/sale/sale.aspx?menu=0">신규분양</a></li>
 							<li><a href="http://www.prugio.com/sale/sale.aspx?menu=1">추천분양</a></li>
@@ -177,8 +177,7 @@
 							<img src="/APTmanager/css/images/common/title_h2.gif" alt="브랜드">
 						</h2>
 						<ul class="depth">
-							<li><a href="http://www.prugio.com/brand/story.aspx">브랜드
-									스토리</a></li>
+							<li><a href="http://www.prugio.com/brand/story.aspx">브랜드스토리</a></li>
 							<!--<li><a href="http://www.prugio.com/brand/valley.aspx">푸르지오 밸리</a></li>-->
 							<li><a href="http://www.prugio.com/brand/news.aspx">푸르지오
 									소식</a></li>

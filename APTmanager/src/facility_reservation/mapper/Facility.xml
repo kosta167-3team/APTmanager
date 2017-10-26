@@ -4,7 +4,6 @@
 
 <mapper namespace="facility_reservation.mapper.FacilityMapper">
 
-
 	<!-- getDetail; 시설 조회 -->
 	<select id="getDetail" parameterType="int" resultType="Facility">
 
@@ -21,8 +20,7 @@
 
 
 	<!-- 2. 남은 자리 확인; GetSpot -->
-	<select id="getSpot" parameterType="Facility_reservation"
-		resultType="Integer">
+	<select id="getSpot" parameterType="Facility_reservation" resultType="Integer">
 		select sum(fr_cnt) from facility_reservation
 		where f_id =
 		#{f_id}
@@ -34,9 +32,10 @@
 	<!-- Reserve; 예약하기 -->
 	<!-- 1. 중복 예약 확인; CheckDoubleBook -->
 	<select id="checkDoubleBook" parameterType="Facility_reservation" resultType="int">
+
 		select
 		r_id, f_id, t_id from facility_reservation
 		where t_id = #{t_id}
 		and r_id = #{r_id}
-	</select>
+	</select> -->
 </mapper>
