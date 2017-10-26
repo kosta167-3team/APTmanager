@@ -29,14 +29,24 @@ public class FacilityController implements ControllerExcuteClass {
 		ActionForward forward = null;
 		Action action = null;
 
-		if (command.equals("detail.facility")) {
+		if (command.equals("list.facility")) {
+			action = new GetfacilityListAction();
 
-			action = new getDetailAction();
+		} else if (command.equals("detail.facility")) {
 
-	 	}else if(command.equals("options.facility")){
+			action = new GetDetailAction();
 			
-			action = new getOptionsAction(); 
-			
+		} else if (command.equals("time.facility")) {
+
+			action = new TimeOptionAction();
+
+		} else if (command.equals("count.facility")) {
+
+			action = new CountOptionAction();
+
+		} else if (command.equals("success.facility")) {
+
+			action = new ReserveSuccessAction();
 		}
 		try {
 			forward = action.excute(httpServletRequest, httpServletResponse);
