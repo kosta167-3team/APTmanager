@@ -29,159 +29,120 @@
 		</tr>
 		<tr>
 			<td>일반 관리비</td>
-
-			<td><fmt:formatNumber value="${Personal_mgmt_ex.general_mgmt }"
-					pattern="###,###,###" /></td>
-			<td><fmt:formatNumber value="${compare.general_mgmt }"
-					pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${Personal_mgmt_ex.general_mgmt }"	pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${compare.general_mgmt }"	pattern="###,###,###" /></td>
 
 
 		</tr>
 		<tr>
 			<td>청소비</td>
-
-			<td><fmt:formatNumber value="${Personal_mgmt_ex.clean }"
-					pattern="###,###,###" /></td>
-			<td><fmt:formatNumber value="${compare.clean }"
-					pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${Personal_mgmt_ex.clean }"	pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${compare.clean }"	pattern="###,###,###" /></td>
 
 		</tr>
 		<tr>
 			<td>소독비</td>
 
-			<td><fmt:formatNumber value="${Personal_mgmt_ex.fumigate }"
-					pattern="###,###,###" /></td>
-			<td><fmt:formatNumber value="${compare.fumigate }"
-					pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${Personal_mgmt_ex.fumigate }"	pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${compare.fumigate }"	pattern="###,###,###" /></td>
 
 		</tr>
 		<tr>
 			<td>승강기유지비</td>
 
-			<td><fmt:formatNumber
-					value="${Personal_mgmt_ex.elevator_maintain }"
-					pattern="###,###,###" /></td>
-			<td><fmt:formatNumber value="${compare.elevator_maintain }"
-					pattern="###,###,###" /></td>
+			<td><fmt:formatNumber	value="${Personal_mgmt_ex.elevator_maintain }"	pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${compare.elevator_maintain }"	pattern="###,###,###" /></td>
 
 		</tr>
 		<tr>
 			<td>수선유지비</td>
 
-			<td><fmt:formatNumber value="${Personal_mgmt_ex.repair }"
-					pattern="###,###,###" /></td>
-			<td><fmt:formatNumber value="${compare.repair }"
-					pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${Personal_mgmt_ex.repair }"	pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${compare.repair }"	pattern="###,###,###" /></td>
 
 		</tr>
 		<tr>
 			<td>장기수선충당금</td>
 
-			<td><fmt:formatNumber
-					value="${Personal_mgmt_ex.long_term_repair }" pattern="###,###,###" /></td>
-			<td><fmt:formatNumber value="${compare.long_term_repair }"
-					pattern="###,###,###" /></td>
+			<td><fmt:formatNumber	value="${Personal_mgmt_ex.long_term_repair }" pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${compare.long_term_repair }"	pattern="###,###,###" /></td>
 
 		</tr>
 		<tr>
 			<td>건물보험료</td>
 
-			<td><fmt:formatNumber
-					value="${Personal_mgmt_ex.building_insurance }"
-					pattern="###,###,###" /></td>
-			<td><fmt:formatNumber value="${compare.building_insurance }"
-					pattern="###,###,###" /></td>
+			<td><fmt:formatNumber	value="${Personal_mgmt_ex.building_insurance }"	pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${compare.building_insurance }"	pattern="###,###,###" /></td>
 
 		</tr>
 		<tr>
 			<td>경비비</td>
 
-			<td><fmt:formatNumber value="${Personal_mgmt_ex.security}"
-					pattern="###,###,###" /></td>
-			<td><fmt:formatNumber value="${compare.security }"
-					pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${Personal_mgmt_ex.security}"	pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${compare.security }"	pattern="###,###,###" /></td>
 
 		</tr>
 		<tr>
 			<td>위탁관리수수료</td>
 
-			<td><fmt:formatNumber value="${Personal_mgmt_ex.consignment }"
-					pattern="###,###,###" /></td>
-			<td><fmt:formatNumber value="${compare.consignment }"
-					pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${Personal_mgmt_ex.consignment }"	pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${compare.consignment }"	pattern="###,###,###" /></td>
 
 		</tr>
 		<tr>
 			<td>세대전기료</td>
 
-			<td><fmt:formatNumber value="${Personal_mgmt_ex.personal_elec }"
-					pattern="###,###,###" /></td>
-			<td><fmt:formatNumber value="${compare.personal_elec}"
-					pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${Personal_mgmt_ex.personal_elec }"	pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${compare.personal_elec}"	pattern="###,###,###" /></td>
 
 		</tr>
 		<tr>
 			<td>공동전기료</td>
 
-			<td><fmt:formatNumber value="${Personal_mgmt_ex.public_elec}"
-					pattern="###,###,###" /></td>
-			<td><fmt:formatNumber value="${compare.public_elec }"
-					pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${Personal_mgmt_ex.public_elec}"	pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${compare.public_elec }"	pattern="###,###,###" /></td>
 
 		</tr>
 		<tr>
 			<td>TV수신료</td>
 
-			<td><fmt:formatNumber value="${Personal_mgmt_ex.tv}"
-					pattern="###,###,###" /></td>
-			<td><fmt:formatNumber value="${compare.tv }"
-					pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${Personal_mgmt_ex.tv}"	pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${compare.tv }"	pattern="###,###,###" /></td>
 
 		</tr>
 		<tr>
 			<td>세대수도료</td>
 
-			<td><fmt:formatNumber
-					value="${Personal_mgmt_ex.personal_water }" pattern="###,###,###" /></td>
-			<td><fmt:formatNumber value="${compare.personal_water }"
-					pattern="###,###,###" /></td>
+			<td><fmt:formatNumber	value="${Personal_mgmt_ex.personal_water }" pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${compare.personal_water }"	pattern="###,###,###" /></td>
 
 		</tr>
 		<tr>
 			<td>세대급탕비</td>
 
-			<td><fmt:formatNumber
-					value="${Personal_mgmt_ex.personal_heat_water }"
-					pattern="###,###,###" /></td>
-			<td><fmt:formatNumber value="${compare.personal_heat_water }"
-					pattern="###,###,###" /></td>
+			<td><fmt:formatNumber	value="${Personal_mgmt_ex.personal_heat_water }"	pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${compare.personal_heat_water }"	pattern="###,###,###" /></td>
 
 		</tr>
 		<tr>
 			<td>생활폐기물 수거</td>
 
-			<td><fmt:formatNumber
-					value="${Personal_mgmt_ex.trash_pick_up  }" pattern="###,###,###" /></td>
-			<td><fmt:formatNumber value="${compare.trash_pick_up }"
-					pattern="###,###,###" /></td>
+			<td><fmt:formatNumber	value="${Personal_mgmt_ex.trash_pick_up  }" pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${compare.trash_pick_up }"	pattern="###,###,###" /></td>
 
 		</tr>
 		<tr>
 			<td>입대위 운영비</td>
 
-			<td><fmt:formatNumber
-					value="${Personal_mgmt_ex.resident_repre }" pattern="###,###,###" /></td>
-			<td><fmt:formatNumber value="${compare.resident_repre }"
-					pattern="###,###,###" /></td>
+			<td><fmt:formatNumber	value="${Personal_mgmt_ex.resident_repre }" pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${compare.resident_repre }"	pattern="###,###,###" /></td>
 
 		</tr>
 		<tr>
 			<td>선관위 운영비</td>
 
-			<td><fmt:formatNumber value="${Personal_mgmt_ex.emc }"
-					pattern="###,###,###원" /></td>
-			<td><fmt:formatNumber value="${compare.emc}"
-					pattern="###,###,###" /></td>
+			<td><fmt:formatNumber value="${Personal_mgmt_ex.emc }"	pattern="###,###,###원" /></td>
+			<td><fmt:formatNumber value="${compare.emc}"	pattern="###,###,###" /></td>
 
 		</tr>
 		<tr>

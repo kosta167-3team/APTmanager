@@ -1,5 +1,4 @@
 <%@ page import="facility_reservation.model.Facility"%>
-<%@ page import="facility_reservation.model.Facility_time"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -16,20 +15,13 @@
 </head>
 <body>
 
-	<c:forEach var="t" begin="${open_id-1}" end="${close_id-1 }"
-		items="${timeTable}">
 
-		<c:forEach var="m" items="${map}">
-
-			<c:if test="${t.t_id == m.key}">
-				<c:set var="spot" value="${m.value}"></c:set>
-			</c:if>
-
-		</c:forEach>
-
-		<input type="button" value="${t.t_start } ~ ${t.t_end }">  남은 자리 ${ spot}  /  총 ${capa} </input>
-		<br>
+	<p>${facility.f_name}</p>
+	<p>${facility.f_contents}</p>
+	<p>수용 가능 인원: ${facility.f_capa}</p>
+	<br>
+	<c:forEach var="d" items="${date }">
+ 	<a href="time.facility?date=${d }" >${d }</a><br>
 	</c:forEach>
-
 </body>
 </html>

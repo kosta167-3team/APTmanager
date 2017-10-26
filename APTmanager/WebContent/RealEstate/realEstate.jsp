@@ -23,7 +23,7 @@
 <link href="/APTmanager/css/common/footer.css" rel="stylesheet">
 
 
-<link href="/APTmanager/css/bill/story.css" rel="stylesheet">
+<link href="/APTmanager/css/realEstate/story.css" rel="stylesheet">
 <link href="/APTmanager/css/bill/lnb.css" rel="stylesheet">
 
 
@@ -38,6 +38,12 @@
 <script src="./js/vendor/jquery.typoshadow.js"></script>
 
 <style type="text/css">
+.contents_box {overflow:hidden;float:left;width:870px; margin-left: 25%;}
+#lnb h2{
+	margin-bottom: 10px;
+	text-align: center;
+}
+
 #annual_contents h2 {
 	display: inline;
 	margin-left: 20px;
@@ -155,9 +161,8 @@ $(this).stop(true).animate({
 		<!-- header -->
 		<div id="header">
 			<div class="inner">
-				<h1>
-					<a href="http://www.prugio.com/main.aspx"><img
-						src="/APTmanager/css/images/common/logo.png" alt="PRUGIO"></a>
+				<h1 >
+					<a href="Main.bill"><img src="/APTmanager/css/images/common/logo.png" alt="PRUGIO"></a>
 				</h1>
 				<ul id="gnb" class="gnb">
 					<li class="menu1"><a
@@ -170,14 +175,14 @@ $(this).stop(true).animate({
 									한눈에 보기</a></li>
 							<li><a href="http://www.prugio.com/sale/map.aspx">지도로 보기</a></li>
 						</ul></li>
-					<li class="menu2"><a
-						href="http://www.prugio.com/construction/construction.aspx">현장안내</a>
-						<ul class="gnb_list">
-							<li><a
-								href="http://www.prugio.com/construction/construction.aspx">공사진행단지</a></li>
-							<li><a
-								href="http://www.prugio.com/construction/construction.aspx?menu=Y">입주진행단지</a></li>
-						</ul></li>
+					<li class="menu2">
+							<a href="month.bill">관리비</a>
+							<ul class="gnb_list">
+								<li><a href="monthBill.bill">관리비 상세</a></li>
+								<li><a href="energy.bill">관리비 비교</a></li>
+								<li><a href="http://www.prugio.com/sale/sale.aspx?menu=2">연간 관리비 비교</a></li>
+							</ul>
+						</li>
 					<li class="menu3"><a href="/APTmanager/RealEstate/start.jsp">부동산</a>
 						<ul class="gnb_list">
 							<li><a href="http://www.prugio.com/brand/story.aspx">내
@@ -228,7 +233,7 @@ $(this).stop(true).animate({
 
 				<div id="lnb" class="lnb">
 					<div class="lnb_list customer">
-						<h2>
+						<h2 id = "logo">
 							<img src="/APTmanager/css/images/common/title_h2.gif" alt="고객센터">
 						</h2>
 						<ul class="depth">
@@ -358,8 +363,9 @@ $(this).stop(true).animate({
 					</div>
 				</div>
 			</div>
-			<!-- //container -->
-			<!-- footer -->
+		</div>
+		<!-- //container -->
+		<!-- footer -->
 
 
 			<div id="footer">

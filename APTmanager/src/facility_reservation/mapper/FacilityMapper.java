@@ -9,7 +9,9 @@ import facility_reservation.model.Facility_reservation;
 import facility_reservation.model.Facility_time;
 
 public interface FacilityMapper {
+	List<Facility> getFacilityList();
 	Facility getDetail (int f_id);
 	List<Facility_time> getTimetable();
 	Integer getSpot (Facility_reservation reservation);
+ 	Integer checkDoubleBook (Facility_reservation reservation); 
 }

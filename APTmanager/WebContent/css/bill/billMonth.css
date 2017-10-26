@@ -1,0 +1,27 @@
+@CHARSET "UTF-8";
+
+.billIndex{
+	text-align: center;
+	color: black;
+	background-color: #eeeeee;
+	border: solid 2px;
+}
+#billTable{
+	text-align:center;
+	
+}
+#billTable tr{
+	border-bottom: solid 1px;
+}
+#billTable td{
+	font-size: 15px;
+	width:50px;
+	padding-bottom: 3px;
+	padding-top: 3px;
+	height : 30px;
+}
+#trHead td{
+	
+	height : 10px;
+}
+.contents_box {overflow:hidden;float:left;width:870px; margin-left: 30%;}

@@ -29,42 +29,56 @@ public class ActionController implements ControllerExcuteClass {
 		Action action = null;
 
 		if (command.equals("login.resident")) {
-			/* 각 actionClass 들은 Action 클래스를 implements 한다. */
-			action = new LoginAction();
-			try {
-				forward = action.excute(httpServletRequest, httpServletResponse);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else if (command.equals("createReservationMenu.resident")) {
-			action = new CreateReservationMenuAction();
-			try {
-				forward = action.excute(httpServletRequest, httpServletResponse);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}else if (command.equals("createReservation.resident")) {
-			action = new CreateReservationAction();
-			try {
-				forward = action.excute(httpServletRequest, httpServletResponse);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else if (command.equals("sendPassImage.resident")) {
-			action = new SendPassImageAction();
-			try {
-				forward = action.excute(httpServletRequest, httpServletResponse);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} else if (command.equals("listReservation.resident")) {
-			action = new ListReservationAction();
-			try {
-				forward = action.excute(httpServletRequest, httpServletResponse);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
+	         /* 각 actionClass 들은 Action 클래스를 implements 한다. */
+	         action = new LoginAction();
+	         try {
+	            forward = action.excute(httpServletRequest, httpServletResponse);
+	         } catch (Exception e) {
+	            e.printStackTrace();
+	         }
+	      } else if (command.equals("createReservationMenu.resident")) {
+	         action = new CreateReservationMenuAction();
+	         try {
+	            forward = action.excute(httpServletRequest, httpServletResponse);
+	         } catch (Exception e) {
+	            e.printStackTrace();
+	         }
+	      }else if (command.equals("createReservation.resident")) {
+	         action = new CreateReservationAction();
+	         try {
+	            forward = action.excute(httpServletRequest, httpServletResponse);
+	         } catch (Exception e) {
+	            e.printStackTrace();
+	         }
+	      } else if (command.equals("sendPassImage.resident")) {
+	         action = new SendPassImageAction();
+	         try {
+	            forward = action.excute(httpServletRequest, httpServletResponse);
+	         } catch (Exception e) {
+	            e.printStackTrace();
+	         }
+	      } else if (command.equals("listReservation.resident")) {
+	         action = new ListReservationAction();
+	         try {
+	            forward = action.excute(httpServletRequest, httpServletResponse);
+	         } catch (Exception e) {
+	            e.printStackTrace();
+	         }
+	      } else if (command.equals("deleteReservation.resident")) {
+	         action = new DeleteReservationAction();
+	         try {
+	            forward = action.excute(httpServletRequest, httpServletResponse);
+	         } catch (Exception e) {
+	            e.printStackTrace();
+	         }
+	      } else if (command.equals("updateReservation.resident")) {
+	         action = new ListReservationAction();
+	         try {
+	            forward = action.excute(httpServletRequest, httpServletResponse);
+	         } catch (Exception e) {
+	            e.printStackTrace();
+	         }
+	      }
 
 		return forward;
 	}

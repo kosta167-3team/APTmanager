@@ -1,7 +1,7 @@
 .main_gnb #header {position:absolute;margin:0 auto;padding-top:40px;background:none;z-index:1000;}
 .main_gnb #header .top_banner{display:none;}
 .main_gnb #header .inner {overflow:visible;position:relative;height:65px;background:url(/APTmanager/css/images/main/bg_main_header.png) 0 0 no-repeat;}
-.main_gnb #header h1 {margin-left:60px;}
+.main_gnb #header h1 {margin-left:60px; margin-top: 11px;}
 .main_gnb #header #gnb {float:right;}
 .main_gnb #header #gnb > li {padding:0 80px 23px 0}
 .main_gnb #header #gnb > li.menu6 {padding-right:110px;}
@@ -19,7 +19,7 @@
 .main_gnb #header .util a {color:#fff;background:url(/APTmanager/css/images/main/main_util_bar.gif) 0px 3px no-repeat;}
 .main_gnb #header .util a:hover {color:#c2c885;}
 .main_gnb #header .util a:first-child {background:none;}
-#container.main {background:#f0f0f0;}
+#container.main {background:white;}
 .intro_cover {position:relative;overflow:hidden;width:100%;min-width:1100px;height:100%;min-height:610px;margin:0 auto;background:url(/APTmanager/css/images/main/main_bg.jpg) center center no-repeat #000;background-size:100% auto;}
 #player_wrap {width:100%;height:100%;margin:0 auto;}
 #player {position:absolute;left:43%;min-width:1600px;background:#fff;}
@@ -56,3 +56,30 @@
 .banner:first-child {margin-left:0;}
 
 .layer {display:none;}
+
+/************************************************************  */
+
+.allBill_content {
+	color: black;
+	font-size: 40px;
+	font-family: "나눔바른고딕";
+	display: inline;
+}
+#allBill_title{
+	background-color:gray;
+	border-color:blue;
+	text-align: center;
+	color: black;
+	font-size: 40px;
+	font-family: "나눔바른고딕";
+	margin-bottom: 100px;
+	
+}
+.resident_content{
+	display:inline;
+	font-size: 20px;
+	float: right;
+	font-family: "나눔바른고딕";
+}
+
+

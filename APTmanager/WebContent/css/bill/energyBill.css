@@ -1,0 +1,42 @@
+@CHARSET "UTF-8";
+
+
+.billChart {
+	float: left;
+}
+.contents_box {
+	overflow: hidden;
+	float: left;
+	width: 870px;
+	margin-left: 30%;
+}
+.chartDiv{
+	text-align: center;
+	
+}
+#energyTable{
+	font-family
+	text-align: center;
+}
+#energyTable tr{
+	text-align: center;
+	border-bottom: solid 2px;
+}
+#energyTable td{
+	padding-bottom : 3px;
+	padding-top: 3px;
+	height: 20px;
+}
+.energyTable_title > td{
+	background-color: #eeeeee;
+	padding-bottom : 3px;
+	padding-top: 3px;
+	height: 40px;
+}
+.energyTable_title {
+	background-color: #eeeeee;
+	border: solid;
+	color: black;
+	font-size: 15px;
+	height: 30px;
+}

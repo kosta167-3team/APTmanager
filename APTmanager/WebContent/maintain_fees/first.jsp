@@ -9,9 +9,11 @@
 
 	/*  location.href="month.bill"; */
 	 /* location.href = "yearMonth.bill"  */
- 	/* location.href = "width.bill"; */ 
+ 	 location.href = "width.bill";
  	/* location.href = "year.bill"; */
- 	location.href = "energy.bill"
+ 	/* location.href = "energy.bill" */
+ 	/* location.href = "haha32123.bill" */
+ 	/* location.href = "Main.bill" */
 
 	
 </script>

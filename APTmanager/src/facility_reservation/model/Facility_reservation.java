@@ -1,8 +1,9 @@
 package facility_reservation.model;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 
-public class Facility_reservation {
+public class Facility_reservation implements Serializable{
 
 	private int fr_id;
 	private int f_id;
@@ -11,6 +12,12 @@ public class Facility_reservation {
 	private int fr_cnt;
 	private Timestamp fr_date;
 	
+	@Override
+	public String toString() {
+		return "Facility_reservation [fr_id=" + fr_id + ", f_id=" + f_id + ", t_id=" + t_id + ", r_id=" + r_id
+				+ ", fr_cnt=" + fr_cnt + ", fr_date=" + fr_date + "]";
+	}
+
 	public Facility_reservation (){}
 
 	public Facility_reservation(int fr_id, int f_id, int t_id, String r_id, int fr_cnt, Timestamp fr_date) {
@@ -29,6 +36,16 @@ public class Facility_reservation {
 		this.t_id = t_id; 
 		this.fr_date = fr_date;
 	}
+	
+	public Facility_reservation( int f_id, int t_id, String r_id, int fr_cnt, Timestamp fr_date) {
+		super(); 
+		this.f_id = f_id;
+		this.t_id = t_id;
+		this.r_id = r_id;
+		this.fr_cnt = fr_cnt;
+		this.fr_date = fr_date;
+	}
+	
 
 	public int getFr_id() {
 		return fr_id;

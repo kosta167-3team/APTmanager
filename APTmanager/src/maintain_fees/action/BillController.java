@@ -74,6 +74,13 @@ public class BillController implements ControllerExcuteClass {
 				forward = action.excute(httpServletRequest, httpServletResponse);
 			} catch (Exception e) {
 				e.printStackTrace();
+			}	
+		}else if(command.equals("Main.bill")) {
+			action = new MainAction();
+			try {
+				forward = action.excute(httpServletRequest, httpServletResponse);
+			} catch (Exception e) {
+				e.printStackTrace();
 			}
 		}
 

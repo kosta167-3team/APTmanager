@@ -1,10 +1,11 @@
 package facility_reservation.model;
 
+import java.io.Serializable;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Facility {
+public class Facility implements Serializable{
 
 	private int f_id;
 	private String f_name;
