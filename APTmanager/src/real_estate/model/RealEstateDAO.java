@@ -179,5 +179,21 @@ public class RealEstateDAO {
 		
 	}
 	
+	//평수별 매매의 최대 최소 값 List
+	public List<RealEstate_Area> showMyAptCatArea(){
+		List<RealEstate_Area> list = new  ArrayList<RealEstate_Area>();
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		
+		try {
+			list = sqlSession.getMapper(RealEstateMapper.class).showMyAptCatArea();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		
+		return list;
+	}
+	
 
 }

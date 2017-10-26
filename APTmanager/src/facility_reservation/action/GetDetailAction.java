@@ -11,7 +11,7 @@ import AptManagerController.ActionForward;
 import facility_reservation.model.Facility;
 import facility_reservation.model.FacilityServiece;
 
-public class getDetailAction implements Action {
+public class GetDetailAction implements Action {
 
 	@Override
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception { 

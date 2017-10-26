@@ -204,11 +204,11 @@
 								<li><a href="http://www.prugio.com/cast/complex.aspx">단지별캐스트</a></li>
 							</ul>
 						</li>
-						<li class="menu5"><a href="http://www.prugio.com/product/product.aspx">부동산</a>
+						<li class="menu5">
+							<a href="/APTmanager/RealEstate/start.jsp">부동산</a>
 							<ul class="gnb_list">
-								<li><a href="http://www.prugio.com/product/premium-green.aspx">프리미엄 상품</a></li>
-								<li><a href="http://www.prugio.com/product/merits-01.aspx">특화아이템</a></li>
-								<li><a href="http://www.prugio.com/product/gallery.aspx">단지 갤러리</a></li>
+								<li><a href="http://www.prugio.com/product/premium-green.aspx">내 아파트 시세</a></li>
+								<li><a href="http://www.prugio.com/product/merits-01.aspx">주변 아파트 시세</a></li>
 							</ul>
 						</li>
 						

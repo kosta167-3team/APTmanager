@@ -31,11 +31,11 @@ public class FacilityController implements ControllerExcuteClass {
 
 		if (command.equals("detail.facility")) {
 
-			action = new getDetailAction();
+			action = new GetDetailAction();
 
 	 	}else if(command.equals("options.facility")){
 			
-			action = new getOptionsAction(); 
+			action = new GetOptionsAction(); 
 			
 		}
 		try {

@@ -12,7 +12,7 @@ import facility_reservation.model.FacilityServiece;
 import facility_reservation.model.Facility_reservation;
 import facility_reservation.model.Facility_time;
 
-public class getOptionsAction implements Action {
+public class GetOptionsAction implements Action {
 
 	@Override
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception {
