@@ -48,7 +48,7 @@ public class getMonthBillAction implements Action {
 		request.setAttribute("compare", compare);
 		
 		actionForward.setRedirect(false);
-		actionForward.setPath("/maintain_fees/haha32123.jsp");
+		actionForward.setPath("/maintain_fees/monthBill.jsp");
 			
 		return actionForward;
 	}

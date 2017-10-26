@@ -58,10 +58,38 @@ public class EnergyAction implements Action {
 		
 		httpServletRequest.setAttribute("meBill", energyBill);
 		
-		ActionForward forward = new ActionForward();
-		forward.setPath("/maintain_fees/energy.jsp");
-		forward.setRedirect(false);
-		return forward;
+//		
+		Date today = new Date();
+		SimpleDateFormat year_format = new SimpleDateFormat("yy");
+
+		String year = year_format.format(today);
+		
+		String month = String.valueOf(cal.get(Calendar.MONTH)+1);
+		
+		Personal_mgmt_ex me = service.getMonthBill(new setIdMonth("dmsql123",year + "-" + month));
+		System.out.println(me);
+		
+		List<Personal_mgmt_ex> list = service.getWidthBill(me.getWidth());
+		Double All_sum =0.0;
+		Double average = 0.0;
+		int count1=0;
+		for(int i = 0; i < list.size(); i++){
+			System.out.println(list.get(i) );
+			All_sum += Double.valueOf(list.get(i).allBill());
+			count1 = i;
+		}
+		average = All_sum / count1;
+		
+		Double result = Double.valueOf(me.allBill()/17) - average/17;
+		
+		httpServletRequest.setAttribute("me", Double.valueOf(me.allBill()/17));
+		httpServletRequest.setAttribute("average", average/17);
+		httpServletRequest.setAttribute("result", result);
+		
+		ActionForward actionForward = new ActionForward();
+		actionForward.setPath("/maintain_fees/EnergyBill.jsp");
+		actionForward.setRedirect(false);
+		return actionForward;
 	}
 
 }

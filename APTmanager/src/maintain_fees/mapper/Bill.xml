@@ -15,6 +15,9 @@
 	<select id="getAllMonthBill" parameterType="String" resultType="Personal_mgmt_ex">
 		SELECT * FROM personal_mgmt_ex WHERE p_month = #{p_month} 
 	</select>
+	<select id="getResident" parameterType="String" resultType="Resident">
+		SELECT * FROM resident WHERE r_id = #{r_id} 
+	</select>
 	
 	<!-- <select id="selectB_id" resultType="Integer">
 		select max(b_id) from board2

@@ -1,6 +1,6 @@
 @CHARSET "EUC-KR";
 /* footer */
-#footer .inner {overflow:hidden;width:1100px;margin:0 auto;padding:30px 0 43px;}
+#footer .inner {overflow:hidden;width:1100px;margin:0 auto;padding:10px 0 10px;}
 #footer .footer_logo {float:left;margin-right:70px;}
 #footer .center_cont {float:left;}
 #footer .footer_util {overflow:hidden;margin-bottom:15px;font-size:13px;}

@@ -2,10 +2,11 @@
 
 
 /* lnb */
-.lnb {float:left;width:160px;}
-.lnb .lnb_list {display:none;}
+.lnb {float:left;width:160px; margin-left: 50px;}
+.lnb .lnb_list {display:none;position:fixed;}
+.lnb .lnb_list.fixed {display:none; position:fixed;}
 .lnb .lnb_list.on {display:block;}
-.lnb h2 {padding:6px 0 19px 14px;border-bottom:2px solid #cdcdcd;}
+.lnb h2 {padding:0px;border-bottom:2px solid #cdcdcd;}
 .lnb ul li {border-top:1px solid #e8e8e8;}
 .lnb ul li:first-child {border:none;}
 .lnb ul li a {display:block;font-size:14px;font-weight:bold;color:#55585b;padding:10px 0 10px 12px;}
