@@ -3,6 +3,10 @@
  */
 
 	$(function() {
+		
+		
+		
+		
 		$("#gnb > li > a").mouseover(function(){
 			$(this).css({
 				"color" : "green"
@@ -134,7 +138,13 @@
 			theForm.submit();
 		}
 	}
-	
+	function login() {              
+        //window.open("./resident/loginForm.jsp", "loginPopup", "width=700, height=250, left=200, top=200");
+         location.href="./resident/loginForm.jsp";            
+	}
+	function visit() {
+        location.href="createReservationMenu.resident";
+     }
 	
 	
 	

@@ -4,6 +4,7 @@ import java.util.Calendar;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import AptManagerController.Action;
 import AptManagerController.ActionForward;
@@ -25,13 +26,22 @@ public class MainAction implements Action {
 		
 		String nowYear = year+ "-" + month;
 		
-		Personal_mgmt_ex personal_mgmt_ex = service.getMonthBill(new setIdMonth("dmsql123",nowYear));
-		Resident resident = service.getResident("dmsql123");
+		HttpSession session = httpServletRequest.getSession();
+		String r_id = (String)session.getAttribute("r_id");
+		System.out.println(r_id);
 		
+		if( r_id == null){
+			r_id = "a";
+		}
+		
+		Personal_mgmt_ex personal_mgmt_ex = service.getMonthBill(new setIdMonth(r_id,nowYear));
+		Resident resident = service.getResident(r_id);
+		System.out.println(personal_mgmt_ex);
 		
 		httpServletRequest.setAttribute("personBill", personal_mgmt_ex);	
 		httpServletRequest.setAttribute("resident", resident);
 		System.out.println(resident);
+		
 		ActionForward actionForward = new ActionForward();
 		actionForward.setRedirect(false);
 		actionForward.setPath("/Main.jsp");

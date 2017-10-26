@@ -13,16 +13,11 @@
 		
 		location.href="mainForm.jsp?r_id=${r_id}"
 	}	
-	$(function() {
-	    $( "#testDatepicker" ).datepicker({
-	    });
-	});
 </script>
 </head>
 <body>
 	<h3> 방문객 등록 </h3>
-	<form acti
-method="post">
+	<form action= createReservation.resident method="post">
 		<table>
 			<tr> 
 				<td> 방문객 이름 </td>

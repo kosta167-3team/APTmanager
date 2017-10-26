@@ -22,7 +22,7 @@ public class LoginAction implements Action{
 		if(residentService.selectResident(r_id) != null &&
 				residentService.selectResident(r_id).getR_pw().equals(r_pw)){
 			session.setAttribute("r_id", request.getParameter("r_id"));
-			forward.setPath("/resident/mainForm.jsp"); // 내가 갈곳	
+			forward.setPath("Main.bill"); // 내가 갈곳	
 			request.setAttribute("resident", residentService.selectResident(r_id));
 		} else {
 			forward.setPath("/resident/loginForm.jsp"); // 내가 갈곳
