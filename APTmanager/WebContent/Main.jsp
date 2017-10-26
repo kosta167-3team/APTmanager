@@ -5,8 +5,7 @@
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="naver-site-verification"
-	content="c24c9ad081b21a2c303475db4c4a60a3d4106a9b">
+<meta name="naver-site-verification" content="c24c9ad081b21a2c303475db4c4a60a3d4106a9b">
 <meta http-equiv="Expires" content="-1">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Cache-Control" content="No-Cache">

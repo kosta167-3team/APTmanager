@@ -64,6 +64,20 @@ public class ActionController implements ControllerExcuteClass {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+		} else if (command.equals("deleteReservation.resident")) {
+			action = new DeleteReservationAction();
+			try {
+				forward = action.excute(httpServletRequest, httpServletResponse);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("updateReservation.resident")) {
+			action = new ListReservationAction();
+			try {
+				forward = action.excute(httpServletRequest, httpServletResponse);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 
 		return forward;

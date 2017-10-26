@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import AptManagerController.Action;
 import AptManagerController.ActionForward;
-import real_estate.model.NearByRealStateService;
+import real_estate.model.RealStateService;
 
 /*매월 1일*/
 //가장 늦은 달 delete
@@ -21,7 +21,7 @@ public class InqRealStateAction implements Action {
 
 	@Override
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		NearByRealStateService service = NearByRealStateService.getInstance();
+		RealStateService service = RealStateService.getInstance();
 
 		ActionForward forword = new ActionForward();
 
@@ -35,6 +35,7 @@ public class InqRealStateAction implements Action {
 		System.out.println("년 : " + year);
 		System.out.println("월 : " + month);
 
+		//처음 설정 하고 이후에 
 		if (day == 1 || day == 11 || day == 22) {
 			String date = year + "" + month;
 			String strDay = "";
@@ -56,7 +57,7 @@ public class InqRealStateAction implements Action {
 			return forword;
 		}
 
-		// 처음 한번 해줘야함.
+		// first
 		/*int remonth = month + 1;
 		int reyear = year;
 		for (int i = 0; i <= 11; i++) {
