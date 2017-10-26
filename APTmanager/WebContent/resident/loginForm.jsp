@@ -8,8 +8,9 @@
 </head>
 <body>
 	<form action="login.resident" method = "post">
-		<table>
-			<tr>
+	<center>
+		<table align="center">
+			<tr >
 				<td>ID</td>
 				<td><input type="text" name="r_id"></td>
 			</tr>
@@ -17,10 +18,11 @@
 				<td>PW</td>
 				<td><input type="password" name="r_pw"></td>
 			</tr>
-			<tr>
+			<tr>			
 				<td><input type="submit" value="로그인"></td>
 			</tr>
 		</table>
+		</center>
 	</form>
 	
 </body>

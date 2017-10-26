@@ -21,7 +21,8 @@
 </head>
 <body>
 	<h3> 방문객 등록 </h3>
-	<form action="createReservation.resident" method="post">
+	<form acti
+method="post">
 		<table>
 			<tr> 
 				<td> 방문객 이름 </td>

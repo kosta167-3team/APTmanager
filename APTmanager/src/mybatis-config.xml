@@ -39,8 +39,9 @@
 		<mapper resource="maintain_fees/mapper/Bill.xml"/>
 		<mapper resource="resident/mapper/Resident.xml"/>
 		<mapper resource="guest/mapper/guest.xml"/>		
+				<!-- 시설예약  -->
+ 		<mapper resource="facility_reservation/mapper/Facility.xml"/>
 
-		<mapper resource="facility_reservation/mapper/Facility.xml"/>
 		<mapper resource="real_estate/mapper/RealEstate.xml"/>	
 	</mappers>
 	

@@ -14,12 +14,14 @@ import resident.model.ResidentService;
 public class CreateReservationAction implements Action{
 	@Override
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		request.setCharacterEncoding("utf-8");
 		ResidentService residentService = ResidentService.getInstance();
 		ActionForward forward = new ActionForward();
 		Reservation reservation = new Reservation();
+		
 		HttpSession session = request.getSession();
 		session.setAttribute("r_id", (String)session.getAttribute("r_id"));
-		request.setCharacterEncoding("utf-8");
+
 		reservation.setR_id((String)session.getAttribute("r_id"));
 		reservation.setV_contents(request.getParameter("v_contents"));
 		reservation.setV_name(request.getParameter("v_name"));
@@ -36,7 +38,7 @@ public class CreateReservationAction implements Action{
 			
 			session.setAttribute("reservation", reservation);
 			System.out.println(reservation.toString());
-			forward.setPath("/resident/sendPassImage.jsp"); // 내가 갈곳	
+			forward.setPath("/resident/sendPassImage.resident"); // 내가 갈곳	
 			
 			request.setAttribute("reservation", reservation);
 		} else {
