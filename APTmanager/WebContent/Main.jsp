@@ -27,7 +27,6 @@
 
 </head>
 <body>
-
 	<div id="wrap">
 		<!-- header -->
 		<div class="main_gnb">
@@ -57,7 +56,7 @@
 							</ul>
 						</li>
 						<li class="menu3">
-							<a href="http://www.prugio.com/brand/brand.aspx">브랜드</a>
+							<a href="#" onclick = "visit()">브랜드</a>
 							<ul class="gnb_list">
 								<li><a href="http://www.prugio.com/brand/story.aspx">외부인예약</a></li>
 								<!--<li><a href="http://www.prugio.com/brand/valley.aspx">푸르지오 밸리</a></li>-->
@@ -85,7 +84,7 @@
 						
 					</ul>
 					<div id="util_id" class="util">
-						<a href="https://www.prugio.com/membership/login.aspx">로그인</a> 
+						<a id = "login" href="#" onclick = "login();">로그인</a> 
 						<a	href="http://www.prugio.com/customer/faq.aspx">고객센터</a> 
 						<a	href="http://www.prugio.com/myprugio/myprugio.aspx">마이푸르지오</a>
 					</div>

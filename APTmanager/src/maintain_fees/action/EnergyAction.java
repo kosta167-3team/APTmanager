@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import AptManagerController.Action;
 import AptManagerController.ActionForward;
@@ -28,7 +29,14 @@ public class EnergyAction implements Action {
 		int now_year = cal.get(Calendar.YEAR)-2000;
 		int now_month = cal.get(Calendar.MONTH)+1;
 		
-		Personal_mgmt_ex energyBill = service.getMonthBill(new setIdMonth("dmsql123", now_year + "-" + now_month));
+		HttpSession session = httpServletRequest.getSession();
+		
+		String r_id = (String)session.getAttribute("r_id");
+		if( r_id == null){
+			r_id = "a";
+		}
+		
+		Personal_mgmt_ex energyBill = service.getMonthBill(new setIdMonth(r_id, now_year + "-" + now_month));
 		
 		List<Personal_mgmt_ex> allEnergyBill = service.getAllMonthBill(now_year + "-" + now_month);
 		int elec_sum = 0;
@@ -66,7 +74,7 @@ public class EnergyAction implements Action {
 		
 		String month = String.valueOf(cal.get(Calendar.MONTH)+1);
 		
-		Personal_mgmt_ex me = service.getMonthBill(new setIdMonth("dmsql123",year + "-" + month));
+		Personal_mgmt_ex me = service.getMonthBill(new setIdMonth(r_id,year + "-" + month));
 		System.out.println(me);
 		
 		List<Personal_mgmt_ex> list = service.getWidthBill(me.getWidth());
