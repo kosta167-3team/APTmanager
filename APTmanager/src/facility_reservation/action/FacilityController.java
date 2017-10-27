@@ -31,17 +31,12 @@ public class FacilityController implements ControllerExcuteClass {
 
 		if (command.equals("list.facility")) {
 			action = new GetfacilityListAction();
-
 		} else if (command.equals("detail.facility")) {
-
 			action = new GetDetailAction();
-			
+
 		} else if (command.equals("time.facility")) {
-
 			action = new TimeOptionAction();
-
 		} else if (command.equals("count.facility")) {
-
 			action = new CountOptionAction();
 
 		} else if (command.equals("success.facility")) {

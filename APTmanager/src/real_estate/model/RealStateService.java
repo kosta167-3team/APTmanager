@@ -402,4 +402,7 @@ public class RealStateService {
 
 	}
 
+	public List<RealEstate_Area> showMyAptCatAreaService(){
+		return rDao.showMyAptCatArea();
+	}
 }
