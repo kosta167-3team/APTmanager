@@ -13,6 +13,7 @@
 	<a id="kakao-login-btn"></a>
 	<a href="http://developers.kakao.com/login"></a>
 	<script type='text/javascript'>
+	
 	var message = ${reservation.v_contents};
 		Kakao.init('ae9f974b5119a84092f103b5834f90ea'); // 개발자의 Javascript Key		
 	

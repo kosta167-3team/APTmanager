@@ -21,23 +21,18 @@
 <script src="/APTmanager/js/common/jquery.js"></script>
 <script src="/APTmanager/js/common/jquery.blockUI.js"></script>
 <script src="/APTmanager/js/common/header.js"></script>
-
 <script type="text/javascript">
 	$(function(){
-		$("#a").click(function(){
-			$("#sub_title").load("createReservationForm.jsp");  //등록
-		});
-	});
-	$(function(){
-		$("#b").click(function(){
-			$("#sub_title").load("listReservation.jsp");  //조회
-		});
-	});
-	$(function(){
 		$("#c").click(function(){
-			$("#sub_title").load("createReservationForm.jsp");  //로그아웃
+			$("#sub_title").load("facilityReview.jsp");
 		});
 	});
+	$(function(){
+		$("#d").click(function(){
+			$("#sub_title").load("facilityRule.jsp");
+		});
+	});
+	
 </script>
 
 <title>브랜드 스토리 | 브랜드 | 푸르지오</title>
@@ -45,9 +40,6 @@
 	lnbName = "brand_lnb";
 	lnbBrand = 1;
 </script>
-
-
-
 </head>
 <body>
 	<script type="text/javascript">
@@ -196,18 +188,20 @@
 					</div>
 					<div class="lnb_list brand_lnb">
 						<h2 style="font-size: 30px">
-						방문객
+						시설
 							<!-- <img src="/APTmanager/css/images/common/title_h2.gif" alt="브랜드"> -->
 						</h2>
 						<ul class="depth">
-							<li><a href='#' id="a">방문객 등록
+							<li><a href="createReservationMenu.resident">시설예약
 									</a></li>
 							<!--<li><a href="http://www.prugio.com/brand/valley.aspx">푸르지오 밸리</a></li>-->
-							<li><a href='#' id="b">방문객 조회
+							<li><a href="listReservation.resident">시설??
 									</a></li>
-							<li><a href='#' id="c">로그아웃
-									</a></li>
-							
+					
+							<li><a href='#' id="c">시설후기작성 </a></li>
+							<li><a href='#' id="d">시설준수사항 </a></li>
+							<!-- <li><a href="facilityReview.jsp">시설후기작성 </a></li> -->
+
 						</ul>
 					</div>
 					<div class="lnb_list product_lnb">
@@ -272,21 +266,11 @@
 				</script>
 				<!-- // lnb -->
 				<div class="contents_box">
-					<div id="sub_title">
-						<h3>브랜드 스토리</h3>
+					<div id=sub_title>
+						<%-- <jsp:include page="facilityReview.jsp" flush="false" /> --%>
 						<p>푸르지오는 자연과 함께 건강하고 행복한 생활을 영위할 수 있는 생활문화공간을 의미합니다.</p>
 					</div>
-					<div class="story_top">
-						<!-- <img src="/asset/images/brand/story_top_img.jpg" alt="">
-						<h4>사람과 자연이 함께하는 프리미엄 주거 문화 공간을 제공합니다.</h4>
-						<p class="txt">
-							대우건설은 1994년 최초로 아파트에 환경개념을 도입한 그린홈, 크린아파트라는 주거상품을 탄생시켰습니다.
-							2003년에는 친환경 철학을 집약하여 자연과 함께 건강하고 행복한 생활을 영위할 수 있는 생활문화공간인 ‘푸르지오’를
-							론칭하고 우리나라를 대표하는 친환경 브랜드로 성장시켰습니다.<br> 푸르지오는 깨끗함, 싱그러움을 표현하는
-							“푸르다”라는 순우리말에 대지, 공간을 뜻하는 “GEO”를 결합한 것으로 사람, 자연, 그리고 환경이 하나 된 차원
-							높은 생활 문화 공간을 의미합니다.
-						</p> -->
-					</div>
+					
 					<!--
 					<div class="story_tab">
 						<a href="javascript:void(0);" class="on">푸르지오</a>
@@ -294,23 +278,13 @@
 					</div>
 					-->
 					<div class="story_box on">
-						<div class="story_mid">
-							<!-- <img src="/asset/images/brand/story_img01.jpg" alt=""> -->
-						</div>
+						
 						<div class="story_bot">
 							<!-- <h4>푸르지오는 고객의 삶 어디에나 함께하고 있습니다.</h4>
 							<p class="txt">친환경 웰빙을 구현한 아파트와 주상복합 브랜드 ‘푸르지오’, 도시적 감각의 주거상품
 								브랜드 ‘푸르지오 시티’, 그리고 전원형 빌라, 타운하우스 브랜드 ‘푸르지오 하임’을 통해 푸르지오는 고객의 삶
 								어디에나 함께하고 있습니다.</p> -->
-							<div class="story_design">
-								<!-- <h4>대한민국 랜드마크 푸르지오</h4>
-								<p class="txt">푸르지오는 대한민국에서 가장 많이 공급된 대표 브랜드 아파트이며 12년간 공급
-									실적 1위로서 '살기좋은 아파트' 대통령상 포함 최다 수상, 프리미엄 브랜드 지수 1위 선정, 국내 최초 서울시
-									'우수디자인 공동주택' 선정 등 다양한 분야에서 수많은 수상실적으로 인정받고 있습니다.</p>
-								<h4>아파트 브랜드 최초 ‘Good Design’ 선정</h4>
-								<p class="txt">푸르지오 BI(Brand Identity)가 산업통산자원부가 주최하고
-									한국디자인진흥원이 주관하는 국내 최고 권위의 디자인 선정제도인 ‘Good Design’에 선정되었습니다.</p> -->
-							</div>
+							
 							<div class="story_bi">
 								<!-- <h4>푸르지오 BI</h4>
 								<img src="/asset/images/brand/story_img02.jpg" alt="">

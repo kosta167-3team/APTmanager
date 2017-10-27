@@ -7,7 +7,9 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	
- 	location.href = "nowGuest.guest";  
+ 	location.href = "nowGuest.guest";
+ 	
+ 	
  
 	
 </script>
