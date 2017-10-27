@@ -57,32 +57,32 @@ public class InqRealStateAction implements Action {
 			return forword;
 		}
 
-		// first
-		/*int remonth = month + 1;
-		int reyear = year;
-		for (int i = 0; i <= 11; i++) {
-			remonth--;
+		//first
+//		int remonth = month + 1;
+//		int reyear = year;
+//		for (int i = 0; i <= 11; i++) {
+//			remonth--;
+//
+//			String strMonth = "";
+//			if (remonth < 1) {
+//				remonth += 12;
+//				reyear--;
+//
+//			}
+//			if (remonth < 10) {
+//				strMonth = "0";
+//			}
+//
+//			strMonth += remonth;
+//			String date = reyear + strMonth;
+//			System.out.println(date);
+//			service.RepeatInqRealEstateRentApiService(request, date, i+1);
+//			service.RepeatInqRealEstateTradeApiService(request, date, i+1);
+//
+//			forword.setRedirect(false);
+//			forword.setPath("xmlParser.realEstate");
+//		}
 
-			String strMonth = "";
-			if (remonth < 1) {
-				remonth += 12;
-				reyear--;
-
-			}
-			if (remonth < 10) {
-				strMonth = "0";
-			}
-
-			strMonth += remonth;
-			String date = reyear + strMonth;
-			System.out.println(date);
-			service.RepeatInqRealEstateRentApiService(request, date, i+1);
-			service.RepeatInqRealEstateTradeApiService(request, date, i+1);
-
-			forword.setRedirect(false);
-			forword.setPath("xmlParser.realEstate");
-		}
-*/
 		return forword;
 	}
 
