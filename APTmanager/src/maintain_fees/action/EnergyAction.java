@@ -30,11 +30,11 @@ public class EnergyAction implements Action {
 		int now_month = cal.get(Calendar.MONTH)+1;
 		
 		HttpSession session = httpServletRequest.getSession();
-		
 		String r_id = (String)session.getAttribute("r_id");
 		if( r_id == null){
 			r_id = "a";
 		}
+		r_id = "alstlr123";
 		
 		Personal_mgmt_ex energyBill = service.getMonthBill(new setIdMonth(r_id, now_year + "-" + now_month));
 		

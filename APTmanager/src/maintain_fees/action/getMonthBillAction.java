@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import AptManagerController.Action;
 import AptManagerController.ActionForward;
@@ -34,9 +35,12 @@ public class getMonthBillAction implements Action {
 		System.out.println(year + "-" + month);
 		System.out.println(year + "-" + beforeMonth);
 		
-		Personal_mgmt_ex now = service.getMonthBill(new setIdMonth("dmsql123", year + "-" + month) );
+		HttpSession session = request.getSession();		
+		String r_id = (String)session.getAttribute("r_id");
+		
+		Personal_mgmt_ex now = service.getMonthBill(new setIdMonth(r_id, year + "-" + month) );
 
-		Personal_mgmt_ex before = service.getMonthBill(new setIdMonth("dmsql123", year + "-" + beforeMonth ) );
+		Personal_mgmt_ex before = service.getMonthBill(new setIdMonth(r_id, year + "-" + beforeMonth ) );
 		
 		System.out.println(now + "\n" + before);
 		compare.compareSet(now, before);

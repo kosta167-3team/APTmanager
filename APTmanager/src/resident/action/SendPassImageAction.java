@@ -33,10 +33,7 @@ public class SendPassImageAction implements Action{
 			request.setAttribute("address", dong +"-"+ho );
 		} else {
 			forward.setPath("/resident/loginForm.jsp"); // 내가 갈곳
-		}
-		
-		
-		
+		}	
 		forward.setRedirect(false);
 		return forward;
 	}

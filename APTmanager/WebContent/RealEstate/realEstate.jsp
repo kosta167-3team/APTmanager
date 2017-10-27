@@ -147,71 +147,62 @@ $(function(){
 	<!-- wrap -->
 	<div id="wrap">
 		<!-- header -->
-		<div id="header">
-			<div class="inner">
-				<h1 >
-					<a href="Main.bill"><img src="/APTmanager/css/images/common/logo.png" alt="PRUGIO"></a>
-				</h1>
-				<ul id="gnb" class="gnb">
-					<li class="menu1"><a
-						href="http://www.prugio.com/sale/sale.aspx">박은l</a>
-						<ul class="gnb_list">
-							<li><a href="http://www.prugio.com/sale/sale.aspx?menu=0">신규분양</a></li>
-							<li><a href="http://www.prugio.com/sale/sale.aspx?menu=1">추천분양</a></li>
-							<li><a href="http://www.prugio.com/sale/sale.aspx?menu=2">상가분양</a></li>
-							<li><a href="http://www.prugio.com/sale/plan.aspx">분양계획
-									한눈에 보기</a></li>
-							<li><a href="http://www.prugio.com/sale/map.aspx">지도로 보기</a></li>
-						</ul></li>
-					<li class="menu2">
-							<a href="month.bill">관리비</a>
+		
+			<div id="header">
+				<div class="inner">
+					<h1>
+						<a href="Main.bill">
+							<img src="/APTmanager/css/images/common/logo.png" alt="HILLSTATE">
+						</a>
+					</h1>
+					<ul id="gnb" class="gnb">
+						<li class="menu1">
+							<a href="#">아파트소개</a>
 							<ul class="gnb_list">
-								<li><a href="monthBill.bill">관리비 상세</a></li>
-								<li><a href="energy.bill">관리비 비교</a></li>
-								<li><a href="http://www.prugio.com/sale/sale.aspx?menu=2">연간 관리비 비교</a></li>
+								<li><a href="http://www.prugio.com/sale/sale.aspx?menu=0">인사말</a></li>
+								<li><a href="http://www.prugio.com/sale/sale.aspx?menu=1">평면도</a></li>
+								<li><a href="http://www.prugio.com/sale/sale.aspx?menu=2">위치정보</a></li>
 							</ul>
 						</li>
-					<li class="menu3"><a href="/APTmanager/RealEstate/start.jsp">부동산</a>
-						<ul class="gnb_list">
-							<li><a href="http://www.prugio.com/brand/story.aspx">내
-									아파트 시세 보기</a></li>
-							<!--<li><a href="http://www.prugio.com/brand/valley.aspx">푸르지오 밸리</a></li>-->
-							<li><a href="http://www.prugio.com/brand/news.aspx">주변
-									아파트 시세보기</a></li>
-
-						</ul></li>
-					<li class="menu4"><a
-						href="http://www.prugio.com/cast/cast.aspx">캐스트</a>
-						<ul class="gnb_list">
-							<li><a href="http://www.prugio.com/cast/cast.aspx">전체보기</a></li>
-							<li><a href="http://www.prugio.com/cast/news.aspx">소식&amp;이벤트</a></li>
-							<li><a href="http://www.prugio.com/cast/complex.aspx">단지별
-									캐스트</a></li>
-						</ul></li>
-					<li class="menu5"><a
-						href="http://www.prugio.com/product/product.aspx">상품안내</a>
-						<ul class="gnb_list">
-							<li><a
-								href="http://www.prugio.com/product/premium-green.aspx">프리미엄
-									상품</a></li>
-							<li><a href="http://www.prugio.com/product/merits-01.aspx">특화아이템</a></li>
-							<li><a href="http://www.prugio.com/product/gallery.aspx">단지
-									갤러리</a></li>
-						</ul></li>
-					<li class="menu6"><a
-						href="http://www.prugio.com/life/life.aspx">라이프</a>
-						<ul class="gnb_list">
-							<li><a href="http://www.prugio.com/life/life.aspx">푸르지오
-									웹진</a></li>
-						</ul></li>
-				</ul>
-				<div class="util">
-					<a href="https://www.prugio.com/membership/login.aspx">로그인</a> <a
-						href="http://www.prugio.com/customer/faq.aspx">고객센터</a> <a
-						href="http://www.prugio.com/myprugio/myprugio.aspx">마이 푸르지오</a>
+						<li class="menu2">
+							<a href="month.bill">관리비</a>
+							<ul class="gnb_list">
+								<li><a href="month.bill">관리비 상세</a></li>
+								<li><a href="energy.bill">관리비 비교</a></li>
+								<li><a href="#">연간 관리비 비교</a></li>
+							</ul>
+						</li>
+						<li class="menu3">
+							<a href="#" onclick = "visit()">외부인예약</a>
+							<ul class="gnb_list">
+								<li><a href="#" onclick = "visit()">예약</a></li>
+								<li><a href="http://www.prugio.com/brand/news.aspx">조회</a></li>
+								<li><a href="http://www.prugio.com/brand/pr-video.aspx">취소</a></li>
+							</ul>
+						</li>
+						<li class="menu4"><a href="/APTmanager/facility_reservation/1start.jsp">시설예약</a> 
+							<ul class="gnb_list">
+								<li><a href="/APTmanager/guest/facilityReview.jsp">시설후기작성</a></li>
+								<li><a href="/APTmanager/guest/facilityRule.jsp">준수사항</a></li>
+							</ul>
+						</li>
+						<li class="menu5">
+							<a href="/APTmanager/RealEstate/start.jsp">부동산</a>
+							<ul class="gnb_list">
+								<li><a href="/APTmanager/RealEstate/start.jsp">내 아파트 시세</a></li>
+								<li><a href="#">주변 아파트 시세</a></li>
+							</ul>
+						</li>
+						
+					</ul>
+					<div id="util_id" class="util">
+						<a id = "login" href="#" onclick = "login();">로그인</a> 
+						<a	href="http://www.prugio.com/customer/faq.aspx">고객센터</a> 
+						<a	href="http://www.prugio.com/myprugio/myprugio.aspx">마이푸르지오</a>
+					</div>
 				</div>
+				<div class="gnb_bg"></div>
 			</div>
-			<div class="gnb_bg"></div>
 		</div>
 		<!-- //header -->
 		<!-- container -->
@@ -269,7 +260,7 @@ $(function(){
 					</div>
 					<div class="lnb_list brand_lnb">
 						<h2>
-							<img src="/APTmanager/css/images/common/title_h2.gif"
+							<img src="/APTmanager/css/images/common/title_h2.png"
 								alt="부동산 시세 보기">
 						</h2>
 						<ul class="depth">
@@ -277,7 +268,7 @@ $(function(){
 								href="/APTmanager/RealEstate/realEstate.jsp?body=start.jsp">내
 									아파트 시세 보기</a></li>
 							<!--<li><a href="http://www.prugio.com/brand/valley.aspx">푸르지오 밸리</a></li>-->
-							<li><a href="http://www.prugio.com/brand/news.aspx">주변
+							<li><a href="#">주변
 									아파트 시세보기</a></li>
 
 						</ul>
