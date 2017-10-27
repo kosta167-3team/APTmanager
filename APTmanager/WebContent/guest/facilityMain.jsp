@@ -27,6 +27,10 @@
 
 <link href="/APTmanager/css/facility_reservation/facility.css" rel="stylesheet">
 
+
+<style type="text/css">
+.contents_box {overflow:hidden;float:left;width:870px; margin-left: 30%;}
+</style>
 <script src="/APTmanager/js/common/jquery.js"></script>
 <script src="/APTmanager/js/common/jquery.blockUI.js"></script>
 <script src="/APTmanager/js/common/header.js"></script>
