@@ -4,7 +4,7 @@
 /* lnb */
 
 .lnb {float:left;width:160px; margin-left: 10%;}
-.lnb .lnb_list {display:none;position:fixed;}
+.lnb .lnb_list {width:120px; display:none;position:fixed;}
 .lnb .lnb_list.fixed {display:none; position:fixed;}
 .lnb .lnb_list.on {display:block;}
 .lnb h2 {padding:0px;border-bottom:2px solid #cdcdcd;}
