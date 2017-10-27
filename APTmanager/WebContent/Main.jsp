@@ -43,9 +43,9 @@
 						<li class="menu1">
 							<a href="#">아파트소개</a>
 							<ul class="gnb_list">
-								<li><a href="http://www.prugio.com/sale/sale.aspx?menu=0">관리비 상세</a></li>
-								<li><a href="http://www.prugio.com/sale/sale.aspx?menu=1">관리비 비교</a></li>
-								<li><a href="http://www.prugio.com/sale/sale.aspx?menu=2">연간 관리비 비교</a></li>
+								<li><a href="http://www.prugio.com/sale/sale.aspx?menu=0">인사말</a></li>
+								<li><a href="http://www.prugio.com/sale/sale.aspx?menu=1">평면도</a></li>
+								<li><a href="http://www.prugio.com/sale/sale.aspx?menu=2">위치정보</a></li>
 							</ul>
 						</li>
 						<li class="menu2">
@@ -53,33 +53,28 @@
 							<ul class="gnb_list">
 								<li><a href="month.bill">관리비 상세</a></li>
 								<li><a href="energy.bill">관리비 비교</a></li>
-								<li><a href="http://www.prugio.com/construction/construction.aspx?menu=Y">연간 관리비 비교</a></li>
+								<li><a href="#">연간 관리비 비교</a></li>
 							</ul>
 						</li>
 						<li class="menu3">
-							<a href="#" onclick = "visit()">브랜드</a>
+							<a href="#" onclick = "visit()">외부인예약</a>
 							<ul class="gnb_list">
-								<li><a href="http://www.prugio.com/brand/story.aspx">외부인예약</a></li>
-								<!--<li><a href="http://www.prugio.com/brand/valley.aspx">푸르지오 밸리</a></li>-->
-								<li><a href="http://www.prugio.com/brand/news.aspx">푸르지오소식</a></li>
-								<li><a href="http://www.prugio.com/brand/pr-video.aspx">브랜드PR</a></li>
-								<li><a href="http://www.prugio.com/brand/award.aspx">수상경력</a></li>
-								<li><a href="http://www.prugio.com/brand/record.aspx">시공실적</a></li>
-								<li class="wide"><a	href="http://www.prugio.com/brand/redevelop.aspx">재개발/재건축/<br>리모델링</a></li>
+								<li><a href="#" onclick = "visit()">예약</a></li>
+								<li><a href="http://www.prugio.com/brand/news.aspx">조회</a></li>
+								<li><a href="http://www.prugio.com/brand/pr-video.aspx">취소</a></li>
 							</ul>
 						</li>
 						<li class="menu4"><a href="/APTmanager/facility_reservation/1start.jsp">시설예약</a> 
 							<ul class="gnb_list">
-								<li><a href="http://www.prugio.com/cast/cast.aspx">전체보기</a></li>
-								<li><a href="http://www.prugio.com/cast/news.aspx">소식&amp;이벤트</a></li>
-								<li><a href="http://www.prugio.com/cast/complex.aspx">단지별캐스트</a></li>
+								<li><a href="/APTmanager/guest/facilityReview.jsp">시설후기작성</a></li>
+								<li><a href="/APTmanager/guest/facilityRule.jsp">준수사항</a></li>
 							</ul>
 						</li>
 						<li class="menu5">
 							<a href="/APTmanager/RealEstate/start.jsp">부동산</a>
 							<ul class="gnb_list">
 								<li><a href="/APTmanager/RealEstate/start.jsp">내 아파트 시세</a></li>
-								<li><a href="http://www.prugio.com/product/merits-01.aspx">주변 아파트 시세</a></li>
+								<li><a href="#">주변 아파트 시세</a></li>
 							</ul>
 						</li>
 						
