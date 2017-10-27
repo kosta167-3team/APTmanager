@@ -45,11 +45,14 @@ css/common/layout.css" rel="stylesheet">
 					<ul id="gnb" class="gnb">
 						<li class="menu1"><a href="#">아파트소개</a>
 							<ul class="gnb_list">
-								<li><a href="http://www.prugio.com/sale/sale.aspx?menu=0">인사말</a></li>
-								<li><a href="http://www.prugio.com/sale/sale.aspx?menu=1">평면도</a></li>
-								<li><a href="http://www.prugio.com/sale/sale.aspx?menu=2">위치정보</a></li>
-							</ul></li>
-						<li class="menu2"><a href="month.bill">관리비</a>
+
+								<li><a href="#">인사말</a></li>
+								<li><a href="#">평면도</a></li>
+								<li><a href="#">위치정보</a></li>
+							</ul>
+						</li>
+						<li class="menu2">
+							<a href="month.bill">관리비</a>
 							<ul class="gnb_list">
 								<li><a href="month.bill">관리비 상세</a></li>
 								<li><a href="energy.bill">관리비 비교</a></li>

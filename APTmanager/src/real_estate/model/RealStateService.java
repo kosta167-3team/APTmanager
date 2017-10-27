@@ -226,23 +226,23 @@ public class RealStateService {
 
 		// 처음에만 하는 설정
 
-		/*
-		 * for (int i = 1; i <= 12; i++) { String rentPath = Folderpath +
-		 * "/monthRent"+i+".xml"; ReadRentXMLFile(rentPath, day);
-		 * 
-		 * String tradePath = Folderpath + "/monthTrade"+i+".xml";
-		 * ReadTradeXMLFile(tradePath, day); }
-		 */
+//		for (int i = 1; i <= 12; i++) {
+//			String rentPath = Folderpath + "/monthRent" + i + ".xml";
+//			ReadRentXMLFile(rentPath, day);
+//
+//			String tradePath = Folderpath + "/monthTrade" + i + ".xml";
+//			ReadTradeXMLFile(tradePath, day);
+//		}
 
-		String rentPath = Folderpath + "/monthRent.xml";
-		ReadRentXMLFile(rentPath, day);
-
-		String tradePath = Folderpath + "/monthTrade.xml";
-		ReadTradeXMLFile(tradePath, day);
+		 String rentPath = Folderpath + "/monthRent.xml";
+		 ReadRentXMLFile(rentPath, day);
+		
+		 String tradePath = Folderpath + "/monthTrade.xml";
+		 ReadTradeXMLFile(tradePath, day);
 
 	}
 
-	/* 처음에  */	
+	/* 처음에 */
 	// 전세 XML 파일 -> 객체 -> DB
 	public void ReadRentXMLFile(String path, String day) {
 
@@ -402,7 +402,7 @@ public class RealStateService {
 
 	}
 
-	public List<RealEstate_Area> showMyAptCatAreaService(){
+	public List<RealEstate_Area> showMyAptCatAreaService() {
 		return rDao.showMyAptCatArea();
 	}
 }
