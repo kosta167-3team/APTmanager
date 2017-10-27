@@ -12,6 +12,7 @@
 <meta name="viewport" content="width=1280">
 
 
+
 <link href="/APTmanager/css/common/common.css" rel="stylesheet">
 <link href="/APTmanager/css/common/layout.css" rel="stylesheet">
 <link href="/APTmanager/css/common/header.css" rel="stylesheet">
@@ -43,9 +44,9 @@
 						<li class="menu1">
 							<a href="#">아파트소개</a>
 							<ul class="gnb_list">
-								<li><a href="http://www.prugio.com/sale/sale.aspx?menu=0">인사말</a></li>
-								<li><a href="http://www.prugio.com/sale/sale.aspx?menu=1">평면도</a></li>
-								<li><a href="http://www.prugio.com/sale/sale.aspx?menu=2">위치정보</a></li>
+								<li><a href="#">인사말</a></li>
+								<li><a href="#">평면도</a></li>
+								<li><a href="#">위치정보</a></li>
 							</ul>
 						</li>
 						<li class="menu2">
