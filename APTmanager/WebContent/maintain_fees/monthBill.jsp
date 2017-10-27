@@ -36,6 +36,9 @@
 </head>
 <body>
 	<script type="text/javascript">
+	function visit() {
+        location.href="createReservationMenu.resident";
+     }
 		var theForm = document.forms['story'];
 		if (!theForm) {
 			theForm = document.story;
