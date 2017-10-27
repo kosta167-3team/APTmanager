@@ -18,9 +18,11 @@
 <body>
 	<a id="kakao-login-btn"></a>
 	<a href="http://developers.kakao.com/login"></a>
+
 	<script type='text/javascript' charset="utf-8">
 	 var address = "${address}";
 		Kakao.init('ae9f974b5119a84092f103b5834f90ea'); // ê°ë°ìì Javascript Key		
+
 	
 		Kakao.Auth.createLoginButton({ // create login button
 			container : '#kakao-login-btn',

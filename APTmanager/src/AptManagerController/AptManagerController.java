@@ -46,8 +46,11 @@ public class AptManagerController extends HttpServlet {
 
 		BillController billController = BillController.getInstance();
 		ActionController actionController = ActionController.getInstance();
+
+
 		GuestController guestController = GuestController.getInstance();
 		RealEstateController nreController = RealEstateController.getInstance();
+
 		FacilityController facilityController = FacilityController.getInstance();
 
 		ControllerExcuteClass controll;
@@ -78,8 +81,8 @@ public class AptManagerController extends HttpServlet {
 			}
 		} else if (command.matches("^\\S+.(facility)$")) {
 			controll = facilityController;
-			//!들어옴
 			System.out.println("APTcontroller - facility");
+
 			try {
 
 				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);

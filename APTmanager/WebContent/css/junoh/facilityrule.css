@@ -1,0 +1,42 @@
+@CHARSET "UTF-8";
+
+.contents {
+	
+	float: left;
+	width: 1500px;
+	
+	background-color: #eeffcb; 
+
+}
+
+.sub_contents{
+	margin-left:16%;
+	margin-right:5%; 
+	width:25%;
+	margin-top:3%;
+	float:left;
+	align: center;
+	
+}
+	
+.sub_contents1{
+	margin-top:3%;
+	margin-left:47%;
+}
+#d1{
+	margin-left:36%;
+	margin-top:4%;
+	font-size:35px;
+	text-shadow: 5px 5px 5px #0054FF;
+}
+
+#d2{
+	font-size:30px;
+	text-shadow: 5px 5px 5px #FF0000;
+}
+
+
+
+
+
+

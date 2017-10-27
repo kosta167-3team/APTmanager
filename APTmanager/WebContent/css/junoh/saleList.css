@@ -1,0 +1,46 @@
+@CHARSET "EUC-KR";
+
+/* sale list, map flag common style */
+.sale .sale_box {}
+.sale .sale_list {margin-bottom:60px;font-weight:bold;*zoom:1;}
+.sale_list:after {display:block;clear:both;content:"";}
+.sale_list li {position:relative;float:left;width:255px;height:345px;margin-left:26px;margin-bottom:60px;-webkit-perspective:800px;-moz-perspective:800px;-o-perspective:800px;perspective:800px;}
+.sale_list li:first-child {margin-left:0;}
+.sale_list li .thumb {overflow:hidden;width:100%;height:155px;}
+.sale_list li .thumb img {width:100%;}
+.sale_list li img {width:100%;}
+.sale_list .ie_hover {overflow:hidden;}
+.sale_list .ie_hover .card {position:relative;}
+.sale_list .ie_hover .card .back {position:absolute;top:100%;left:0;transform:rotateY(0);}
+.sale_list li .card {-webkit-transition:-webkit-transform 1s;-moz-transition:-moz-transform 1s;-o-transition:-o-transform 1s;transition:transform 1s;-webkit-transform-style:preserve-3d;-moz-transform-style:preserve-3d;-o-transform-style:preserve-3d;transform-style:preserve-3d;}
+.sale_list .hover .card {-webkit-transform:rotateY(180deg);-moz-transform:rotateY(180deg);-o-transform:rotateY(180deg);transform:rotateY(180deg);}
+.sale_list .card > div {display:block;width:100%;-webkit-backface-visibility:hidden;-moz-backface-visibility:hidden;-o-backface-visibility:hidden;backface-visibility:hidden;}
+.sale_list .card .back {position:absolute;top:0;-webkit-transform:rotateY(180deg);-moz-transform:rotateY(180deg);-o-transform:rotateY(180deg);transform:rotateY(180deg);}
+.sale_list dl {height:137px;padding:30px 15px 22px 24px;border:1px solid #d8d8d8;border-top:none;background:#fff;}
+.sale_list dt {padding:13px 0 12px;font-size:17px;font-weight:bold;background:url(images/common/bg_title_bar.gif) 0 0 no-repeat;color:#333232;word-break:keep-all;}
+.sale_list dd.location {overflow:hidden;max-height:56px;font-size:12px;font-weight:normal;color:#929292;}
+.sale_list dd.tel {position:absolute;right:24px;bottom:22px;font-family:Trajan Pro;font-size:18px;letter-spacing:-1px;color:#333232;}
+.flag {display:block;position:absolute;left:24px;bottom:22px;width:68px;padding:5px 0;font-size:12px;text-align:center;color:#fff;}
+.flag.type1 {background-color:#ecb512;}
+.flag.type2 {background-color:#a532db;}
+.flag.type3 {background-color:#1e9572;}
+.flag.type4 {background-color:#24aae2;}
+.flag.type5 {background-color:#d45922;}
+.flag.type6 {background-color:#cc398c;}
+.flag.type7 {background-color:#85509e;}
+.flag.type8 {background-color:#4656cc;}
+.flag.type9 {background-color:#92bd3e;}
+.flag.type10 {background-color:#3fac56;}
+.flag.type11 {background-color:#d4324d;}
+.flag.type12 {background-color:#2abea7;}
+.flag.type13 {background-color:#f1670b;}
+.flag.type14 {background-color:#1f6da3;}
+.flag.type15 {background-color:#1f3435;}
+.flag.event {display:block;overflow:hidden;position:absolute;left:-4px;top:7px;width:73px;height:30px;text-indent:-9999px;background:url(/asset/images/sale/icon_event.png) 0 0 no-repeat;}
+.sale_list .apt dl {background:url(/asset/images/sale/bg_apt.gif) center 73% no-repeat #fff;}
+.sale_list .office dl {background:url(/asset/images/sale/bg_office.gif)  center 73% no-repeat #fff;}
+.sale_list .none_thumb dl {height:266px;padding-top:55px;border-top:1px solid #ebebeb;}
+.sale_list .none_thumb dt {padding-top:15px;}
+.sale_list .none_thumb dt span {display:block;}
+.sale_list .feature_thumb {position:absolute;left:0;top:200%;overflow:hidden;width:254px;height:345px;}
+.sale_list .feature_thumb .btn_detail {display:inline-block;position:absolute;left:50%;bottom:45px;width:147px;margin-left:-73.5px;padding:9px 0;font-weight:normal;text-align:center;background-color:#535353;color:#fff;}

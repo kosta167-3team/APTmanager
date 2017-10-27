@@ -42,6 +42,7 @@
 
 	<select id="checkDoubleBook" parameterType="Facility_reservation"	resultType="Integer">
 		select f_id from facility_reservation
+
 		where t_id = #{t_id}
 		and r_id = #{r_id}
 		and TRUNC(fr_date) LIKE TRUNC(#{fr_date})
