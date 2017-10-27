@@ -15,6 +15,18 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+
+    <script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
+
+<script type="text/javascript">
+ 	$('.non-cat').on('mouseover',function(){
+ 		$(this).stop(true).animate({
+ 	      	  borderWidth: '12px',
+ 	       	 color: '#ae5e9b'
+ 	    }, duration, 'easeOutSine');
+ 	})
+</script>
 </head>
 <body>
 	<div id="myaptChart">

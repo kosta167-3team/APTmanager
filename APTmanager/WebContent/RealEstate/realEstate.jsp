@@ -46,7 +46,7 @@
 
 #annual_contents h2 {
 	display: inline;
-	margin-left: 20px;
+	margin-left: 0px;
 }
 
 #lastMoth_contents h2 {
@@ -125,19 +125,7 @@ $(function(){
     }, duration, 'easeOutSine');
 });
 }) */
-$('#myAPTchart').moseover( function(){
-	 	$(this).stop(true).animate({
-  	  borderWidth: '12px',
-   	 color: '#ae5e9b'
-}, duration, 'easeOutSine');
-})
-.on('mouseout', function(){
-$(this).stop(true).animate({
-    borderWidth: '0px',
-    color: '#ebc000'
-}, duration, 'easeOutSine');
-});
-})
+
 
 </script>
 </head>
