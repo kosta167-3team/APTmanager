@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import AptManagerController.Action;
 import AptManagerController.ActionForward;
@@ -28,7 +29,14 @@ public class EnergyAction implements Action {
 		int now_year = cal.get(Calendar.YEAR)-2000;
 		int now_month = cal.get(Calendar.MONTH)+1;
 		
-		Personal_mgmt_ex energyBill = service.getMonthBill(new setIdMonth("dmsql123", now_year + "-" + now_month));
+		HttpSession session = httpServletRequest.getSession();
+		
+		String r_id = (String)session.getAttribute("r_id");
+		if( r_id == null){
+			r_id = "a";
+		}
+		
+		Personal_mgmt_ex energyBill = service.getMonthBill(new setIdMonth(r_id, now_year + "-" + now_month));
 		
 		List<Personal_mgmt_ex> allEnergyBill = service.getAllMonthBill(now_year + "-" + now_month);
 		int elec_sum = 0;
@@ -58,10 +66,38 @@ public class EnergyAction implements Action {
 		
 		httpServletRequest.setAttribute("meBill", energyBill);
 		
-		ActionForward forward = new ActionForward();
-		forward.setPath("/maintain_fees/energy.jsp");
-		forward.setRedirect(false);
-		return forward;
+//		
+		Date today = new Date();
+		SimpleDateFormat year_format = new SimpleDateFormat("yy");
+
+		String year = year_format.format(today);
+		
+		String month = String.valueOf(cal.get(Calendar.MONTH)+1);
+		
+		Personal_mgmt_ex me = service.getMonthBill(new setIdMonth(r_id,year + "-" + month));
+		System.out.println(me);
+		
+		List<Personal_mgmt_ex> list = service.getWidthBill(me.getWidth());
+		Double All_sum =0.0;
+		Double average = 0.0;
+		int count1=0;
+		for(int i = 0; i < list.size(); i++){
+			System.out.println(list.get(i) );
+			All_sum += Double.valueOf(list.get(i).allBill());
+			count1 = i;
+		}
+		average = All_sum / count1;
+		
+		Double result = Double.valueOf(me.allBill()/17) - average/17;
+		
+		httpServletRequest.setAttribute("me", Double.valueOf(me.allBill()/17));
+		httpServletRequest.setAttribute("average", average/17);
+		httpServletRequest.setAttribute("result", result);
+		
+		ActionForward actionForward = new ActionForward();
+		actionForward.setPath("/maintain_fees/EnergyBill.jsp");
+		actionForward.setRedirect(false);
+		return actionForward;
 	}
 
 }

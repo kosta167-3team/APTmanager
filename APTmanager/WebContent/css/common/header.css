@@ -4,8 +4,8 @@
 
 #header .inner {width:1100px;height:61px;margin:0 auto;*zoom:1;}
 #header .inner:after {display:block;clear:both;content:"";}
-#header h1 {float:left;padding:24px 10px 0 0;}
-.gnb {float:left;padding-top:24px;margin-right:100px;margin-left:100px;*zoom:1;}
+#header h1 {float:left;padding:12px 10px 0 0;}
+.gnb {float:left;padding-top:24px;margin-right:100px;margin-left:50px;*zoom:1;}
 .gnb:after {display:block;clear:both;content:"";}
 .gnb > li {float:left;position:relative;padding:0 77px 22px 0;z-index:200;}
 .gnb > li.menu2 {padding-right:65px;}

@@ -2,6 +2,7 @@ package real_estate.mapper;
 
 import java.util.List;
 
+import real_estate.model.RealEstate_Area;
 import real_estate.model.RealEstate_rent;
 import real_estate.model.RealEstate_trade;
 
@@ -16,4 +17,5 @@ public interface RealEstateMapper {
 	 
 	 public List<RealEstate_rent> showMyAptRentAnnual();
 	 public List<RealEstate_trade> showMyAptTradeAnnual();
+	 public List<RealEstate_Area> showMyAptCatArea();
 }

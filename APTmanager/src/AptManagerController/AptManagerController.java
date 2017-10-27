@@ -46,8 +46,11 @@ public class AptManagerController extends HttpServlet {
 
 		BillController billController = BillController.getInstance();
 		ActionController actionController = ActionController.getInstance();
+
+
 		GuestController guestController = GuestController.getInstance();
 		RealEstateController nreController = RealEstateController.getInstance();
+
 		FacilityController facilityController = FacilityController.getInstance();
 
 		ControllerExcuteClass controll;
@@ -78,8 +81,8 @@ public class AptManagerController extends HttpServlet {
 			}
 		} else if (command.matches("^\\S+.(facility)$")) {
 			controll = facilityController;
-			//!들어옴
 			System.out.println("APTcontroller - facility");
+
 			try {
 
 				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
@@ -88,9 +91,7 @@ public class AptManagerController extends HttpServlet {
 			}
 		} else if (command.matches("^\\S+.(realEstate)$")) {
 			controll = nreController;
-
 			System.out.println("실행 : " + command);
-
 			try {
 				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);
 			} catch (Exception e) {
@@ -109,9 +110,7 @@ public class AptManagerController extends HttpServlet {
 			 * } catch (Exception e) { e.printStackTrace(); } }
 			 */
 		else {
-
-			System.out.println("못 찾음... command:" + command);
-
+			System.out.println("실패... command:" + command);
 		}
 		if (forward != null) {
 			if (forward.isRedirect()) {

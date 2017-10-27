@@ -14,6 +14,7 @@ public class InsertMenuAction implements Action {
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ResidentService residentService = ResidentService.getInstance();
 		ActionForward forward = new ActionForward();
+		request.setCharacterEncoding("utf-8");
 		HttpSession session = request.getSession();
 	
 		String r_id = (String)session.getAttribute("r_id");

@@ -207,7 +207,7 @@
 						</h2>
 						<ul class="depth">
 							<li><a href ="/APTmanager/guest/facilityMain.jsp?body=/facility_reservation/1start.jsp" >시설예약</a></li>
-							
+
 							<!--<li><a href="http://www.prugio.com/brand/valley.aspx">푸르지오 밸리</a></li>-->
 							<!-- <li><a href="listReservation.resident">시설?? </a></li> -->
 

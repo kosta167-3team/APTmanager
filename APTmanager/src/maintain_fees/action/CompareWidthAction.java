@@ -7,6 +7,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import AptManagerController.Action;
 import AptManagerController.ActionForward;
@@ -21,7 +22,6 @@ public class CompareWidthAction implements Action {
 		BillService service = BillService.getInstance();
 		
 		Date today = new Date();
-		Personal_mgmt_ex compare = new Personal_mgmt_ex();
 		SimpleDateFormat year_format = new SimpleDateFormat("yy");
 
 		String year = year_format.format(today);
@@ -29,7 +29,14 @@ public class CompareWidthAction implements Action {
 		
 		String month = String.valueOf(cal.get(Calendar.MONTH)+1);
 		
-		Personal_mgmt_ex me = service.getMonthBill(new setIdMonth("dmsql123",year + "-" + month));
+		HttpSession session = request.getSession();
+		String r_id = (String)session.getAttribute("r_id");
+		
+		if( r_id == null){
+			r_id = "a";
+		}
+		
+		Personal_mgmt_ex me = service.getMonthBill(new setIdMonth(r_id,year + "-" + month));
 		System.out.println(me);
 		
 		List<Personal_mgmt_ex> list = service.getWidthBill(me.getWidth());
@@ -45,14 +52,13 @@ public class CompareWidthAction implements Action {
 		
 		Double result = Double.valueOf(me.allBill()/17) - average/17;
 		
-		ActionForward actionForward = new ActionForward();
+		
 		
 		request.setAttribute("me", Double.valueOf(me.allBill()/17));
 		request.setAttribute("average", average/17);
 		request.setAttribute("result", result);
 		
-		
-		
+		ActionForward actionForward = new ActionForward();
 		actionForward.setRedirect(false);
 		actionForward.setPath("/maintain_fees/width.jsp");
 		

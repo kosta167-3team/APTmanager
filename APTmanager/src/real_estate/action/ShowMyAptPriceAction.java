@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import AptManagerController.Action;
 import AptManagerController.ActionForward;
 import real_estate.model.RealStateService;
+import real_estate.model.RealEstate_Area;
 import real_estate.model.RealEstate_rent;
 import real_estate.model.RealEstate_trade;
 
@@ -25,15 +26,18 @@ public class ShowMyAptPriceAction implements Action {
 		RealEstate_trade lastMonthTrade = service.showMyAptTradeService();
 		List<RealEstate_trade> annualTradeList = service.showMyAptTradeAnnualService();
 		
+		List<RealEstate_Area> catAreaList = service.showMyAptCatAreaService();
 		
 		request.setAttribute("lastMonthRent", lastMonthRent);
 		request.setAttribute("lastMonthTrade", lastMonthTrade);
 		request.setAttribute("annualRent", annualRentList);
 		request.setAttribute("annualTrade", annualTradeList);
+		request.setAttribute("catArea", catAreaList);
 		
 		forward.setRedirect(false);
 		//forward.setPath("/RealEstate/NewFile1.jsp");
-		forward.setPath("/RealEstate/showMyAptPrice.jsp");
+		forward.setPath("/RealEstate/realEstate.jsp");
+		//forward.setPath("/RealEstate/cat_area.jsp");
 		
 		return forward;
 	}

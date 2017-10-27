@@ -19,9 +19,11 @@
 		<typeAlias type="facility_reservation.model.Facility_time" alias = "Facility_time"/>
 		<typeAlias type="facility_reservation.model.Facility_reservation" alias = "Facility_reservation"/>
 		
+		
 		 
 		<typeAlias type="real_estate.model.RealEstate_rent" alias = "RealEstate_rent"/>
 		<typeAlias type="real_estate.model.RealEstate_trade" alias = "RealEstate_trade"/>
+		<typeAlias type="real_estate.model.RealEstate_Area" alias = "RealEstate_Area"/>
 
 	</typeAliases>
 	
@@ -39,8 +41,10 @@
 		<mapper resource="maintain_fees/mapper/Bill.xml"/>
 		<mapper resource="resident/mapper/Resident.xml"/>
 		<mapper resource="guest/mapper/guest.xml"/>		
+				<!-- 시설예약  -->
 
-		<mapper resource="facility_reservation/mapper/Facility.xml"/>
+ 		<mapper resource="facility_reservation/mapper/Facility.xml"/>
+
 		<mapper resource="real_estate/mapper/RealEstate.xml"/>	
 	</mappers>
 	

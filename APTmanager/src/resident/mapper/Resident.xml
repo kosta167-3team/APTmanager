@@ -18,6 +18,11 @@
 			#{vr_id}, #{r_id}, #{v_name}, #{v_tel}, SYSDATE, #{vr_date}, #{v_contents}, '승인'
 		)
 	</insert>
+	<delete id="deleteReservation" parameterType="String">
+		delete from visit_reservation
+		where vr_id = #{vr_id}
+	</delete>
+	
 	<select id="searchReservation" parameterType="String" resultType="Reservation">
 		select * from visit_reservation 
 		where r_id = #{r_id}
@@ -29,7 +34,14 @@
 	
 	</select>
 	
-	
+	<select id="searchDong" parameterType="String" resultType="int">
+		select r_dong from resident
+		where r_id = #{r_id}
+	</select>
+		<select id="searchHo" parameterType="String" resultType="int">
+		select r_ho from resident
+		where r_id = #{r_id}
+	</select>
 </mapper>
 
 

@@ -73,6 +73,25 @@ public class ResidentDao {
 			sqlSession.close();
 		}
 	}
+	public int deleteReservation(String vr_id) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+		try {
+			re = sqlSession.getMapper(ResidentMapper.class).deleteReservation(vr_id);
+			if(re > 0) {
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+			return re;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return re;
+		} finally {
+			sqlSession.close();
+		}
+	}
+	
 	
 	public List<Reservation> searchReservation(String r_id, int requestPage) {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
@@ -91,6 +110,28 @@ public class ResidentDao {
 		SqlSession sqlSession = getSqlSessionFactory().openSession();
 		try {
 			return sqlSession.getMapper(ResidentMapper.class).getReservationCount(r_id);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		} finally {
+			sqlSession.close();
+		}
+	}
+	public int searchDong(String r_id) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try {
+			return sqlSession.getMapper(ResidentMapper.class).searchDong(r_id);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		} finally {
+			sqlSession.close();
+		}
+	}
+	public int searchHo(String r_id) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		try {
+			return sqlSession.getMapper(ResidentMapper.class).searchHo(r_id);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return 0;
