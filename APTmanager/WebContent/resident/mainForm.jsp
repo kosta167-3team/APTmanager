@@ -384,6 +384,18 @@
 		<!-- //footer -->
 	</div>
 	<!-- //wrap -->
+
+	<ul>
+		<li>
+		 방문객
+		 <ul>
+		 	<li> <a href = "createReservationMenu.resident">방문객 등록</a> </li>
+		 	<li> <a href = "listReservation.resident">방문객 조회</a> </li>
+		 	<li> <a href = "selectMenu.resident">로그아웃</a> </li>
+		 </ul>		
+		</li>
+	</ul>
+
 </body>
 </html>
 

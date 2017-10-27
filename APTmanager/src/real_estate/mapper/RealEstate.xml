@@ -65,7 +65,7 @@
 	
 	<!-- 삼성 힐스테이트 1단지 1년치 매달 최대 최소 전세 List -->
 	<select id="showMyAptTradeAnnual" resultType="RealEstate_trade">
-	 	SELECT A_NAME, RT_YEAR, RT_MONTH  , ROUND(MAX( RT_PRICE/RT_AREA)) "rt_max",ROUND(MIN( RT_PRICE/RT_AREA)) "rt_min"
+	 	SELECT A_NAME, RT_YEAR, RT_MONTH  , ROUND(AVG( RT_PRICE/RT_AREA)) "rt_price"
 		FROM REALESTATE_TRADE
 		GROUP BY RT_YEAR, RT_MONTH, A_NAME
 		HAVING A_NAME='삼성동힐스테이트 1단지'

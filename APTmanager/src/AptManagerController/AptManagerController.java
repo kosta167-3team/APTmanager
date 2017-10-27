@@ -30,7 +30,10 @@ public class AptManagerController extends HttpServlet {
 
 	public void doProcess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
 			throws ServletException, IOException {
-		System.out.println("컨트롤러");
+		
+		//!들어옴
+		System.out.println("APTcontroller");
+		
 		String requestUri = httpServletRequest.getRequestURI();
 		String command = null;
 
@@ -42,13 +45,12 @@ public class AptManagerController extends HttpServlet {
 		System.out.println(command);
 
 		BillController billController = BillController.getInstance();
-
 		ActionController actionController = ActionController.getInstance();
+
 
 		GuestController guestController = GuestController.getInstance();
 		RealEstateController nreController = RealEstateController.getInstance();
 
-		// facility
 		FacilityController facilityController = FacilityController.getInstance();
 
 		ControllerExcuteClass controll;
@@ -79,6 +81,8 @@ public class AptManagerController extends HttpServlet {
 			}
 		} else if (command.matches("^\\S+.(facility)$")) {
 			controll = facilityController;
+			System.out.println("APTcontroller - facility");
+
 			try {
 
 				forward = controll.doProcess(httpServletRequest, httpServletResponse, command);

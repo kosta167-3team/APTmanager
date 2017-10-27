@@ -1,6 +1,8 @@
 package facility_reservation.model;
 
-public class Facility_time {
+import java.io.Serializable;
+
+public class Facility_time implements Serializable{
 
 	private int t_id;
 	private String t_start;

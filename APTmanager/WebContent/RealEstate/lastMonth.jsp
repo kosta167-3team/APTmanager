@@ -14,12 +14,11 @@
     google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
       var options = {
-        title: "${lastMonthRent.a_name}의\n${lastMonthRent.rr_year} / ${lastMonthRent.rr_month}월시세",
+        title: "${lastMonthRent.a_name}의\n${lastMonthRent.rr_year} / ${lastMonthRent.rr_month}월시세 (㎡)",
         width: 300,
         height: 400,
         bar: {groupWidth: "35%"},
         legend: { position: "none" },
-        height: 240,
         animation:{
           duration: 1000,
           easing: 'out',
@@ -41,6 +40,6 @@
   </script>
   </head>
   <body>
-    <div id="columnchart_values" style="width: 900px; height: 300px;"></div>
+    <div id="columnchart_values" ></div>
   </body>
 </html>

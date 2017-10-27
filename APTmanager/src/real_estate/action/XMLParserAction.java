@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import AptManagerController.Action;
 import AptManagerController.ActionForward;
-import real_estate.model.NearByRealStateService;
+import real_estate.model.RealStateService;
 import real_estate.model.RealEstate_rent;
 
 
@@ -16,7 +16,7 @@ public class XMLParserAction implements Action {
 	@Override
 	public ActionForward excute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forword = new ActionForward();
-		NearByRealStateService service = NearByRealStateService.getInstance();
+		RealStateService service = RealStateService.getInstance();
 		
 		service.XMLParserService(request);
 		

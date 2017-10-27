@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
 import maintain_fees.mapper.BillMapper;
+import resident.model.Resident;
 
 public class BillDao {
 	private static BillDao billDao = new BillDao();
@@ -74,6 +75,21 @@ public class BillDao {
 		catch (Exception e) 
 		{
 			e.printStackTrace();
+		}
+		finally{
+			sqlSession.close();
+		}
+		return null;
+	}
+	public Resident getResident(String r_id){
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		Resident resident;
+		
+		try {
+			resident = sqlSession.getMapper(BillMapper.class).getResident(r_id);
+			return resident;
+		} catch (Exception e) {
+
 		}
 		finally{
 			sqlSession.close();
