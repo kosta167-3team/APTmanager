@@ -47,6 +47,11 @@
 <script src="/APTmanager/js/common/jquery.blockUI.js"></script>
 <script src="/APTmanager/js/common/header.js"></script>
 <script type="text/javascript">
+
+
+function visit() {
+    location.href="createReservationMenu.resident";
+ }
 var selected;
 $(function() {
 	$('select').change(function(){

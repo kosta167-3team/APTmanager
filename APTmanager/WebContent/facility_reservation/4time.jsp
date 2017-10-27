@@ -46,6 +46,10 @@
 <script src="/APTmanager/js/common/header.js"></script>
 <script type="text/javascript">
 
+
+function visit() {
+    location.href="createReservationMenu.resident";
+ }
 	$(function() {
 		$(".t_button").click(function() {
 			location.href = "count.facility?t_id=" + $(this).val();

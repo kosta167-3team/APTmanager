@@ -59,6 +59,9 @@
 <script>
 	lnbName = "brand_lnb";
 	lnbBrand = 1;
+	function visit() {
+        location.href="createReservationMenu.resident";
+     }
 </script>
 </head>
 <body>
