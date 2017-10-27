@@ -196,7 +196,7 @@
 								<li class="wide"><a	href="http://www.prugio.com/brand/redevelop.aspx">재개발/재건축/<br>리모델링</a></li>
 							</ul>
 						</li>
-						<li class="menu4"><a href="http://www.prugio.com/cast/cast.aspx">시설예약</a>
+						<li class="menu4"><a href="/APTmanager/facility_reservation/1start.jsp">시설예약</a> 
 							<ul class="gnb_list">
 								<li><a href="http://www.prugio.com/cast/cast.aspx">전체보기</a></li>
 								<li><a href="http://www.prugio.com/cast/news.aspx">소식&amp;이벤트</a></li>

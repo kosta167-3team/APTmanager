@@ -14,4 +14,5 @@ public interface FacilityMapper {
 	List<Facility_time> getTimetable();
 	Integer getSpot (Facility_reservation reservation);
  	Integer checkDoubleBook (Facility_reservation reservation); 
+ 	int insertReservation (Facility_reservation reservation);
 }

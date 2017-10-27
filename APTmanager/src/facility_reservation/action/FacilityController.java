@@ -40,8 +40,8 @@ public class FacilityController implements ControllerExcuteClass {
 
 			action = new TimeOptionAction();
 
-		} else if (command.equals("count.facility")) {
-
+		} else if (command.equals("count.facility")) { 
+			
 			action = new CountOptionAction();
 
 		} else if (command.equals("success.facility")) {
