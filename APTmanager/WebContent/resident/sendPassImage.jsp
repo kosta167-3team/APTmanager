@@ -40,7 +40,7 @@
 					
 							success : function(res) { // ë³´ë´ê¸° ì±ê³µ
 								Kakao.Auth.logout();
-						        location.href="mainForm.jsp";
+						        location.href="/APTmanager/resident/mainForm.jsp";
 							},
 							fail : function(error) { // ë³´ë´ê¸° ì¤í¨
 								Kakao.Auth.logout();
