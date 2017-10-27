@@ -1,9 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
-<!doctype html>
+
+<%
+	String body = (String) request.getParameter("body");
+	if (body == null) {
+		body = "/facility_reservation/2list.jsp";
+	}
+%>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ko">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <!-- <link href="css/common.css" rel="stylesheet"> -->
 <!-- <link href="/APTmanager/css/sub.css" rel="stylesheet"> -->
@@ -20,6 +35,26 @@
 <script src="/APTmanager/js/common/jquery.js"></script>
 <script src="/APTmanager/js/common/jquery.blockUI.js"></script>
 <script src="/APTmanager/js/common/header.js"></script>
+<script type="text/javascript">
+
+	$(function() {
+		$(".t_button").click(function() {
+			location.href = "count.facility?t_id=" + $(this).val();
+		});
+	});
+
+	/* 	$(function() {
+	 $("#c").click(function() {
+	 $("#sub_title").load("facilityReview.jsp");
+	 });
+	 });
+
+	 $(function() {
+	 $("#d").click(function() {
+	 $("#sub_title").load("facilityRule.jsp");
+	 });
+	 }); */
+</script>
 
 <title>브랜드 스토리 | 브랜드 | 푸르지오</title>
 <script>
@@ -53,7 +88,7 @@
 				</h1>
 				<ul id="gnb" class="gnb">
 					<li class="menu1"><a
-						href="http://www.prugio.com/sale/sale.aspx">박은l</a>
+						href="http://www.prugio.com/sale/sale.aspx">분양안내</a>
 						<ul class="gnb_list">
 							<li><a href="http://www.prugio.com/sale/sale.aspx?menu=0">신규분양</a></li>
 							<li><a href="http://www.prugio.com/sale/sale.aspx?menu=1">추천분양</a></li>
@@ -147,7 +182,8 @@
 					</div>
 					<div class="lnb_list myprugio">
 						<h2>
-							<img src="/APTmanager/css/images/common/title_h2.gif" alt="마이푸르지오">
+							<img src="/APTmanager/css/images/common/title_h2.gif"
+								alt="마이푸르지오">
 						</h2>
 						<ul class="depth">
 							<li><a href="https://www.prugio.com/myprugio/my-info.aspx">개인정보관리</a></li>
@@ -173,19 +209,27 @@
 						</ul>
 					</div>
 					<div class="lnb_list brand_lnb">
-						<h2>
-							<img src="/APTmanager/css/images/common/title_h2.gif" alt="브랜드">
+						<h2 style="font-size: 30px">
+							시설
+							<!-- <img src="/APTmanager/c
+							ss/images/common/title_h2.gif" alt="브랜드"> -->
 						</h2>
 						<ul class="depth">
-							<li><a href="http://www.prugio.com/brand/story.aspx">브랜드스토리</a></li>
+							<li><a
+								href="/APTmanager/guest/facilityMain.jsp?body=/facility_reservation/1start.jsp">시설예약</a></li>
+
 							<!--<li><a href="http://www.prugio.com/brand/valley.aspx">푸르지오 밸리</a></li>-->
-							<li><a href="http://www.prugio.com/brand/news.aspx">푸르지오
-									소식</a></li>
-							<li><a href="http://www.prugio.com/brand/pr-video.aspx">브랜드
-									PR</a></li>
-							<li><a href="http://www.prugio.com/brand/award.aspx">수상경력</a></li>
-							<li><a href="http://www.prugio.com/brand/record.aspx">시공실적</a></li>
-							<li><a href="http://www.prugio.com/brand/redevelop.aspx">재개발/재건축/리모델링</a></li>
+							<!-- <li><a href="listReservation.resident">시설?? </a></li> -->
+
+							<li><a
+								href="/APTmanager/guest/facilityMain.jsp?body=facilityReview.jsp"
+								id="c">시설후기작성 </a></li>
+							<li><a
+								href="/APTmanager/guest/facilityMain.jsp?body=facilityRule.jsp"
+								id="d">시설준수사항 </a></li>
+							<!-- <li><a href="facility
+							Review.jsp">시설후기작성 </a></li> -->
+
 						</ul>
 					</div>
 					<div class="lnb_list product_lnb">
@@ -203,7 +247,8 @@
 					</div>
 					<div class="lnb_list prugio_guide">
 						<h2>
-							<img src="/APTmanager/css/images/common/title_h2.gif" alt="푸르지오정책">
+							<img src="/APTmanager/css/images/common/title_h2.gif"
+								alt="푸르지오정책">
 						</h2>
 						<ul class="depth">
 							<li><a
@@ -218,7 +263,7 @@
 				</div>
 				<script>
 					switch (lnbName) {
-					
+
 					case "customer":
 						$("#lnb").children(".customer").addClass("on").find(
 								".depth").children("li").eq(lnbCustomer - 1)
@@ -250,21 +295,28 @@
 				</script>
 				<!-- // lnb -->
 				<div class="contents_box">
-					<div class="sub_title">
-						<h3>브랜드 스토리</h3>
-						<p>푸르지오는 자연과 함께 건강하고 행복한 생활을 영위할 수 있는 생활문화공간을 의미합니다.</p>
+					<div id=sub_title>
+
+
+						<c:forEach var="t" begin="${open_id-1}" end="${close_id-1 }"
+							items="${timeTable}">
+
+							<c:forEach var="m" items="${map}">
+
+								<c:if test="${t.t_id == m.key}">
+									<c:set var="spot" value="${m.value}"></c:set>
+									<c:set var="t_id" value="${m.key}"></c:set>
+
+								</c:if>
+
+							</c:forEach>
+							<button class="t_button" value="${t.t_id }">${t.t_start }~${t.t_end }</button> 남은 자리 ${ spot}  /  총 ${capa}
+		<input type="hidden" value=${t.t_id } class="t_button">
+							<br>
+						</c:forEach>
+
 					</div>
-					<div class="story_top">
-						<img src="/asset/images/brand/story_top_img.jpg" alt="">
-						<h4>사람과 자연이 함께하는 프리미엄 주거 문화 공간을 제공합니다.</h4>
-						<p class="txt">
-							대우건설은 1994년 최초로 아파트에 환경개념을 도입한 그린홈, 크린아파트라는 주거상품을 탄생시켰습니다.
-							2003년에는 친환경 철학을 집약하여 자연과 함께 건강하고 행복한 생활을 영위할 수 있는 생활문화공간인 ‘푸르지오’를
-							론칭하고 우리나라를 대표하는 친환경 브랜드로 성장시켰습니다.<br> 푸르지오는 깨끗함, 싱그러움을 표현하는
-							“푸르다”라는 순우리말에 대지, 공간을 뜻하는 “GEO”를 결합한 것으로 사람, 자연, 그리고 환경이 하나 된 차원
-							높은 생활 문화 공간을 의미합니다.
-						</p>
-					</div>
+
 					<!--
 					<div class="story_tab">
 						<a href="javascript:void(0);" class="on">푸르지오</a>
@@ -272,34 +324,24 @@
 					</div>
 					-->
 					<div class="story_box on">
-						<div class="story_mid">
-							<img src="/asset/images/brand/story_img01.jpg" alt="">
-						</div>
+
 						<div class="story_bot">
-							<h4>푸르지오는 고객의 삶 어디에나 함께하고 있습니다.</h4>
+							<!-- <h4>푸르지오는 고객의 삶 어디에나 함께하고 있습니다.</h4>
 							<p class="txt">친환경 웰빙을 구현한 아파트와 주상복합 브랜드 ‘푸르지오’, 도시적 감각의 주거상품
 								브랜드 ‘푸르지오 시티’, 그리고 전원형 빌라, 타운하우스 브랜드 ‘푸르지오 하임’을 통해 푸르지오는 고객의 삶
-								어디에나 함께하고 있습니다.</p>
-							<div class="story_design">
-								<h4>대한민국 랜드마크 푸르지오</h4>
-								<p class="txt">푸르지오는 대한민국에서 가장 많이 공급된 대표 브랜드 아파트이며 12년간 공급
-									실적 1위로서 '살기좋은 아파트' 대통령상 포함 최다 수상, 프리미엄 브랜드 지수 1위 선정, 국내 최초 서울시
-									'우수디자인 공동주택' 선정 등 다양한 분야에서 수많은 수상실적으로 인정받고 있습니다.</p>
-								<h4>아파트 브랜드 최초 ‘Good Design’ 선정</h4>
-								<p class="txt">푸르지오 BI(Brand Identity)가 산업통산자원부가 주최하고
-									한국디자인진흥원이 주관하는 국내 최고 권위의 디자인 선정제도인 ‘Good Design’에 선정되었습니다.</p>
-							</div>
+								어디에나 함께하고 있습니다.</p> -->
+
 							<div class="story_bi">
-								<h4>푸르지오 BI</h4>
+								<!-- <h4>푸르지오 BI</h4>
 								<img src="/asset/images/brand/story_img02.jpg" alt="">
 								<p class="txt">푸르지오 BI의 가장 핵심적인 요소인 브랜드마크는 모든 매체의 중심에 사용될
 									것입니다. 따라서 브랜드마크 적용 시 규정과 원칙을 반드시 준수하여 왜곡, 변형 , 오남용 등의 사례가 발생하지
 									않도록 합니다.</p>
 								<a href="/asset/file/Prugio_bI.zip" target="_blank">푸르지오 BI
-									다운로드</a>
+									다운로드</a> -->
 							</div>
 							<div class="story_font">
-								<h4>푸르지오 전용서체</h4>
+								<!-- <h4>푸르지오 전용서체</h4>
 								<img src="/asset/images/brand/story_img03.jpg" alt="">
 								<p class="txt">
 									<strong>‘푸르지오체’</strong>는 건설사 최초로 자체 개발한 전용서체로, 푸르지오 BI(Brand
@@ -308,12 +350,12 @@
 									세련되고 모던한 형태로 표현하였습니다.
 								</p>
 								<a href="/asset/file/prugio_font.zip" target="_blank">푸르지오체
-									다운받기</a>
+									다운받기</a> -->
 							</div>
-							<div class="story_catalog">
+							<!-- 	<div class="story_catalog">
 								<a href="/asset/file/prugio_catalog.pdf" target="_blank">카탈로그
 									보기</a>
-							</div>
+							</div> -->
 						</div>
 					</div>
 					<!--
@@ -350,12 +392,16 @@
 						Copyright www.prugio.com All rights reserved.
 					</address>
 				</div>
-				<span class="icsi_logo"><img src="/APTmanager/css/images/common/logo_01.png" alt="" /></span> 
-				<span class="icsi_logo"><img src="/APTmanager/css/images/common/logo_02.png" alt="" /></span>
+				<span class="icsi_logo"><img
+					src="/APTmanager/css/images/common/logo_01.png" alt="" /></span> <span
+					class="icsi_logo"><img
+					src="/APTmanager/css/images/common/logo_02.png" alt="" /></span>
 				<div class="right_cont">
 					<p class="customer_tel">고객센터 1670-1000</p>
 					<a href="http://www.daewooenc.com/" target="_blank" class="dwlogo">
-					<img src="css/images/common/footer_logo_daewooenc.png" alt="(주)대우건설"></a>
+						<img src="css/images/common/footer_logo_daewooenc.png"
+						alt="(주)대우건설">
+					</a>
 				</div>
 			</div>
 		</div>

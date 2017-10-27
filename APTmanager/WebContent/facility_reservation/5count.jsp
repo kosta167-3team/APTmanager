@@ -1,13 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%
+	request.setCharacterEncoding("utf-8");
+%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 
 <%
-          String body = (String) request.getParameter("body");
-            if(body ==null){
-                   body="/facility_reservation/2list.jsp";
-          }  
+	String body = request.getParameter("body");
+	if (body == null) {
+		body = "/facility_reservation/2list.jsp";
+	}
 %>
-
+<%
+	String fr_cnt = "";
+%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="ko">
@@ -22,29 +30,57 @@
 <link href="/APTmanager/css/common/header.css" rel="stylesheet">
 <link href="/APTmanager/css/common/footer.css" rel="stylesheet">
 
+
 <link href="/APTmanager/css/bill/story.css" rel="stylesheet">
 <link href="/APTmanager/css/bill/lnb.css" rel="stylesheet">
-
-<link href="/APTmanager/css/facility_reservation/facility.css" rel="stylesheet">
 
 <script src="/APTmanager/js/common/jquery.js"></script>
 <script src="/APTmanager/js/common/jquery.blockUI.js"></script>
 <script src="/APTmanager/js/common/header.js"></script>
 <script type="text/javascript">
+var selected;
+$(function() {
+	$('select').change(function(){
+	        selected = $(this).find('option:selected').val();
+	
+	});
+});
 
 
+	$(function() {
+		$("#reserve").click(function() {
 
-/* 	$(function() {
+			location.href = "success.facility?fr_cnt=" + selected;
+		});
+	});
+
+	
+	
+	
+	
+	$(function() {
+		$("#reserve").click(function() {
+			location.href = "success.facility";
+		});
+	});
+
+	$(function() {
+		$(".t_button").click(function() {
+			location.href = "count.facility?t_id=" + $(this).val();
+		});
+	});
+
+	$(function() {
 		$("#c").click(function() {
 			$("#sub_title").load("facilityReview.jsp");
 		});
 	});
-	
+
 	$(function() {
 		$("#d").click(function() {
 			$("#sub_title").load("facilityRule.jsp");
 		});
-	}); */
+	});
 </script>
 
 <title>브랜드 스토리 | 브랜드 | 푸르지오</title>
@@ -206,14 +242,20 @@
 							ss/images/common/title_h2.gif" alt="브랜드"> -->
 						</h2>
 						<ul class="depth">
-							<li><a href ="/APTmanager/guest/facilityMain.jsp?body=/facility_reservation/1start.jsp" >시설예약</a></li>
+							<li><a
+								href="/APTmanager/guest/facilityMain.jsp?body=/facility_reservation/1start.jsp">시설예약</a></li>
 
 							<!--<li><a href="http://www.prugio.com/brand/valley.aspx">푸르지오 밸리</a></li>-->
 							<!-- <li><a href="listReservation.resident">시설?? </a></li> -->
 
-							<li><a href="/APTmanager/guest/facilityMain.jsp?body=facilityReview.jsp" id="c">시설후기작성 </a></li>
-							<li><a href="/APTmanager/guest/facilityMain.jsp?body=facilityRule.jsp" id="d">시설준수사항 </a></li>
-							<!-- <li><a href="facilityReview.jsp">시설후기작성 </a></li> -->
+							<li><a
+								href="/APTmanager/guest/facilityMain.jsp?body=facilityReview.jsp"
+								id="c">시설후기작성 </a></li>
+							<li><a
+								href="/APTmanager/guest/facilityMain.jsp?body=facilityRule.jsp"
+								id="d">시설준수사항 </a></li>
+							<!-- <li><a href="facility
+							Review.jsp">시설후기작성 </a></li> -->
 
 						</ul>
 					</div>
@@ -281,9 +323,21 @@
 				<!-- // lnb -->
 				<div class="contents_box">
 					<div id=sub_title>
-						<%-- <jsp:include page="facilityReview.jsp" flush="false" /> --%>
-						 <jsp:include page="<%= body %>" flush="false"/> 
-					 
+
+			<form action="success.facility" method="post">
+						<p>예약 가능 인원: ${spot}</p>
+						<br> 
+						<select name = "cnt">
+
+							<c:forEach var="cnt" begin="1" end="${spot }">
+								<option name = "fr_cnt" value="${cnt}" class="cnt">${cnt}</option>
+							</c:forEach>
+
+						</select> <br> <br> 
+						
+						<input type="submit" value="예약하기"	id="reserve">
+						
+			</form>
 					</div>
 
 					<!--

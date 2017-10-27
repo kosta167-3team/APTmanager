@@ -28,7 +28,7 @@ public class GetfacilityListAction implements Action {
 		
 		ActionForward actionForward = new ActionForward();
 		actionForward.setRedirect(false);
-		actionForward.setPath("/facility_reservation/2 list.jsp");
+		actionForward.setPath("/guest/facilityMain.jsp");
 		
 		return actionForward;
 	}

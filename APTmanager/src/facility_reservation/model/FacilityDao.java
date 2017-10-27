@@ -1,6 +1,6 @@
 package facility_reservation.model;
 
-import java.io.InputStream; 
+import java.io.InputStream;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -91,7 +91,7 @@ public class FacilityDao {
 		Integer fr_cnt = 0;
 		try {
 			fr_cnt = sqlSession.getMapper(FacilityMapper.class).getSpot(reservation);
-			if(fr_cnt == null) {
+			if (fr_cnt == null) {
 				fr_cnt = 0;
 			}
 		} catch (Exception e) {
@@ -115,5 +115,25 @@ public class FacilityDao {
 			sqlSession.close();
 		}
 		return f_id;
+	}
+
+	public int insertReservation(Facility_reservation reservation) {
+		SqlSession sqlSession = getSqlSessionFactory().openSession();
+		int re = -1;
+
+		try {
+			re = sqlSession.getMapper(FacilityMapper.class).insertReservation(reservation);
+			System.out.println("dao>"+re);
+			if (re > 0) {
+				sqlSession.commit();
+			} else {
+				sqlSession.rollback();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			sqlSession.close();
+		}
+		return re;
 	}
 }

@@ -22,22 +22,32 @@ public class GetDetailAction implements Action {
 		request.setCharacterEncoding("utf-8");
 		
 		//String f_id = (String)request.getParameter("f_id");
+		
+		
+		request.setAttribute("f_id", request.getParameter("f_id"));	
+		
 		int f_id = Integer.parseInt(request.getParameter("f_id"));
+		
+		HttpSession session = request.getSession();
+		session.setAttribute("f_id", f_id);
+		
 		//Facility facility = service.getDetail(Integer.parseInt(f_id));
+		
+		System.out.println("getdetail에서"+f_id);
+		
 		Facility facility = service.getDetail(f_id);
 		List<Timestamp> date = facility.Set_date();
-
+ 
 		request.setAttribute("facility", facility);
 		request.setAttribute("date", date);
 		
 
 	//	System.out.println("f_id = " + f_id);
-		//HttpSession session = request.getSession(); 
-		
+
 		
 		ActionForward actionForward = new ActionForward();
 		actionForward.setRedirect(false);
-		actionForward.setPath("/facility_reservation/3 detail.jsp");
+		actionForward.setPath("/facility_reservation/3detail.jsp");
 
 		return actionForward;  
 	}

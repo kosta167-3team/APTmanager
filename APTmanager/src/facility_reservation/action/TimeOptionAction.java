@@ -21,16 +21,25 @@ public class TimeOptionAction implements Action {
 		// 1.시간 확인
 		 
 		FacilityServiece service = FacilityServiece.getinstance();
+		HttpSession session = request.getSession();
+		
+		request.setAttribute("fr_date",request.getParameter("fr_date"));
+		
+		System.out.println("TimeO"+(int)session.getAttribute("f_id"));
+		
+		
+		int f_id = (int)session.getAttribute("f_id");
 		//날짜
-		Timestamp now = java.sql.Timestamp.valueOf(request.getParameter("date")); // 형식을 지켜야 함
-				
+		Timestamp now = java.sql.Timestamp.valueOf(request.getParameter("fr_date")); // 형식을 지켜야 함
+		
+		session.setAttribute("fr_date", request.getParameter("fr_date"));
 				
 		List<Facility_time> timeTable = service.getTimetable();
-		HttpSession session = request.getSession();
-		String f_id = (String)session.getAttribute("f_id");
-		request.setAttribute("f_id", f_id);
-		HashMap<String, Integer> hash = service.getRunningTime(1);
-
+	 
+		
+		 
+		HashMap<String, Integer> hash = service.getRunningTime(f_id);
+		
 		// 시작하는 index
 		Integer open_id = hash.get("open_id");
 
@@ -50,9 +59,12 @@ public class TimeOptionAction implements Action {
 		HashMap<Integer, Integer> map = new HashMap<Integer, Integer>();
 		for (int i = open_id; i < close_id + 1; i++) {
 
+			if(close_id == 24){
+				
+			}
 		//	Facility_reservation reservation = new Facility_reservation(Integer.parseInt(f_id), i, now);
 			
-			reservation.setF_id(Integer.parseInt(f_id));
+			reservation.setF_id(f_id);
 			reservation.setT_id(i);
 			reservation.setFr_date(now);
 			reservation.setFr_cnt(0);
@@ -62,14 +74,13 @@ public class TimeOptionAction implements Action {
 
 		}
 		
-		int f_cp = service.getDetail(Integer.parseInt(f_id)).getF_capa();
+		int f_cp = service.getDetail(f_id).getF_capa();
 		request.setAttribute("map", map); 
 		request.setAttribute("capa", f_cp); 
-		System.out.println("fr_date : "+now);
-		session.setAttribute("fr_date", now);
+		System.out.println("fr_date : "+now); 
 		ActionForward actionForward = new ActionForward();
 		actionForward.setRedirect(false);
-		actionForward.setPath("/facility_reservation/4 time.jsp");
+		actionForward.setPath("/facility_reservation/4time.jsp");
 
 		return actionForward;
 	}
